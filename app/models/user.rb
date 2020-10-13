@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-    validates :username, :email, :session_token, :password_digest, :password, null: false
+    validates :username, :email, :session_token, :password_digest, :password, presence: true
     validates :username, :email, :session_token, uniqueness: true
-    validate :password, length: {minimum : 6}, allow_nil: true
+    validates :password, length: {minimum: 6}, allow_nil: true
     after_initialize :ensure_session_token
     attr_reader :password
     def self.find_by_credentials(username_or_email, password)
@@ -24,6 +24,7 @@ class User < ApplicationRecord
 
     def reset_session_token!
         self.session_token = SecureRandom::urlsafe_base64
+        self.save!
         self.session_token
     end
 
