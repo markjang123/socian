@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :require_logged_in, :logged_in?
     def current_user
-        @current_user = User.find_by_credentials(params{:user][:username_or_email], params[:user][:password])
+        @current_user = User.find_by_credentials(params[:user][:username_or_email], params[:user][:password])
     end
 
     def require_logged_in
