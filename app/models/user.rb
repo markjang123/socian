@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-    validates :username, :email, :session_token, :password_digest, :password, presence: true
+    USER_TYPES = ["artist", "fan"]
+    validates :username, :email, :session_token, :password_digest, :password, :user_type, presence: true
     validates :username, :email, :session_token, uniqueness: true
+    validates :user_type, inclusion: USER_TYPES
     validates :password, length: {minimum: 6}, allow_nil: true
     after_initialize :ensure_session_token
     attr_reader :password
