@@ -8,6 +8,9 @@ class Api::UsersController < ApplicationController
         render json: {@user.errors.full_messages}
     end
     end
+    def show
+        render :show
+    end
 
     private
     def user_params
