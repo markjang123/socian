@@ -5,15 +5,21 @@ const Navbar = (props) => {
     const {currentUser, requestUser} = props
     if (!!currentUser){
         return (
-            <div>
+            <nav className="navbar">
                 Welcome {currentUser.username}
-            </div>
+            </nav>
         )
     } else {
         return (
-            <div>
-                <Link to="/session/new">LOGIN LINK</Link>
-                <Link to="/users/new">SIGNUP LINK</Link>
+            <div className="navbar-wrapper">
+                <nav className="navbar">
+                    <Link className="navbar-link" to="/">
+                        socian
+                    </Link>
+                    <input type="text" placeholder="Search and discover music"/>
+                    <Link className="navbar-link" to="/users/new">sign up</Link>
+                    <Link className="navbar-link" to="/session/new">log in</Link>
+                </nav>
             </div>
         )
     }

@@ -3,15 +3,15 @@ import React from 'react'
 class LoginForm extends React.Component {
     render(){
         return (
-            <form> 
+            <form className="login-form"> 
                 <h1>Sign In</h1>
-                <label> Username:
+                <label> Username / email
                     <input type="text"/>
                 </label>
-                <label> Password:
+                <label> Password
                     <input type="password"/>
                 </label>
-                <input type="submit" value="Sign In"/>
+                <input type="submit" value="Log in"/>
             </form>
         )
     }
