@@ -1,14 +1,16 @@
 class User < ApplicationRecord
     USER_TYPES = ["artist", "fan"]
-    validates :username, :email, :session_token, :password_digest, :password, :user_type, presence: true
+    validates :username, :email, :session_token, :user_type, presence: true
+    validates :password_digest, presence: {message: "Password can\'t be blank"}
     validates :username, :email, :session_token, uniqueness: true
     validates :user_type, inclusion: USER_TYPES
     validates :password, length: {minimum: 6}, allow_nil: true
     after_initialize :ensure_session_token
     attr_reader :password
     def self.find_by_credentials(username_or_email, password)
+        # debugger
         @user = User.find_by(username: username_or_email) || User.find_by(email: username_or_email)
-        if @user && self.is_password?(password)
+        if @user && @user.is_password?(password)
             @user
         else 
             nil
@@ -16,8 +18,8 @@ class User < ApplicationRecord
     end
 
     def password=(password)
-        self.password_digest = BCrypt::Password.create(password)
         @password = password
+        self.password_digest = BCrypt::Password.create(password)
     end
     
     def is_password?(password)

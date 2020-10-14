@@ -23,7 +23,12 @@ const signup = (user) => {
 }
 const login = (user) => {
     return dispatch => {
-       return SessionUtils.signup(user)
+       return SessionUtils.login(user)
                 .then(response => dispatch(receiveCurrentUserId(response.id)))
+    }
+}
+const logout = () => {
+    return dispatch => {
+        return 
     }
 }
