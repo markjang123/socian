@@ -8,6 +8,7 @@ const receiveCurrentUserId = (userId) => {
         userId
     }
 }
+
 const receiveSessionErrors = (sessionErrors) => {
     return {
         type: RECEIVE_SESSION_ERRORS,
@@ -15,20 +16,22 @@ const receiveSessionErrors = (sessionErrors) => {
     }
 }
 
-const signup = (user) => {
+
+export const signup = (user) => {
     return dispatch => {
        return SessionUtils.signup(user)
                 .then(response => dispatch(receiveCurrentUserId(response.id)))
     }
 }
-const login = (user) => {
+export const login = (user) => {
     return dispatch => {
        return SessionUtils.login(user)
                 .then(response => dispatch(receiveCurrentUserId(response.id)))
     }
 }
-const logout = () => {
+export const logout = () => {
     return dispatch => {
-        return 
+        return SessionUtils.logout()
+            .then(response => dispatch(receiveCurrentUserId(null)))
     }
 }
