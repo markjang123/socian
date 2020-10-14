@@ -1,6 +1,5 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
-import LoginForm from './components/session/login_form'
+import Root from './components/root'
 import configureStore from './store/store'
 
 document.addEventListener("DOMContentLoaded",() => {
@@ -8,5 +7,5 @@ document.addEventListener("DOMContentLoaded",() => {
     const store = configureStore();
     window.dispatch = store.dispatch;
     window.getState = store.getState;
-    ReactDOM.render(<LoginForm store={store}/>, root)
+    ReactDOM.render(<Root store={store} />, root)
 })
