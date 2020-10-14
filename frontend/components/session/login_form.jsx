@@ -3,8 +3,9 @@ import React from 'react'
 class LoginForm extends React.Component {
     render(){
         return (
+            <div className="login-form-wrapper">
             <form className="login-form"> 
-                <h1>Sign In</h1>
+                <h3>Log in</h3>
                 <label> Username / email
                     <input type="text"/>
                 </label>
@@ -13,6 +14,7 @@ class LoginForm extends React.Component {
                 </label>
                 <input type="submit" value="Log in"/>
             </form>
+            </div>
         )
     }
 }

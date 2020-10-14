@@ -14,7 +14,7 @@ const Navbar = (props) => {
             <div className="navbar-wrapper">
                 <nav className="navbar">
                     <Link className="navbar-link" to="/">
-                        socian
+                        <img id="logo-link" src={window.image} />
                     </Link>
                     <input type="text" placeholder="Search and discover music"/>
                     <Link className="navbar-link" to="/users/new">sign up</Link>
