@@ -1,15 +1,17 @@
 import {connect} from 'react-redux';
-import {fetchUser} from '../../actions/user_actions'
+import {requestUser} from '../../actions/user_actions'
 import Navbar from './navbar'
 
-mapStateToProps = state => {
+const mapStateToProps = state => {
     return {
         currentUserId: state.session.currentUserId
     }
 }
 
-mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
-        fetchUser: userId => dispatch(fetchUser(userId))
+        requestUser: userId => dispatch(requestUser(userId))
     }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
