@@ -6,13 +6,13 @@ const Navbar = (props) => {
     if (!!currentUser){
         return (
             <div>
-                {currentUser.username}
+                Welcome {currentUser.username}
             </div>
         )
     } else {
         return (
             <div>
-                LOGOUT BUTTON
+                <Link to="/session/new">LOGIN LINK</Link>
             </div>
         )
     }
