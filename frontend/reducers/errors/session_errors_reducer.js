@@ -1,6 +1,6 @@
 import {RECEIVE_SESSION_ERRORS} from '../../actions/session_actions'
 
-const ErrorsReducer = (oldState = {sessionErrors: []}, action) => {
+const SessionErrorsReducer = (oldState = [], action) => {
     Object.freeze(oldState)
 
     switch(action.type){

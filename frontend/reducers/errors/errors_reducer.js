@@ -1,7 +1,7 @@
-import {combineReducers} from 'react-redux'
-import {SessionErrorsReducer} from './session_errors_reducer'
+import {combineReducers} from 'redux'
+import SessionErrorsReducer from './session_errors_reducer'
 
-const RootReducer = combineReducers({
+const ErrorsReducer = combineReducers({
     sessionErrors: SessionErrorsReducer
 })
 
