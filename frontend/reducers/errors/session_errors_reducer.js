@@ -1,4 +1,4 @@
-import {RECEIVE_SESSION_ERRORS} from '../actions/session_actions'
+import {RECEIVE_SESSION_ERRORS} from '../../actions/session_actions'
 
 const ErrorsReducer = (oldState = {sessionErrors: []}, action) => {
     Object.freeze(oldState)
@@ -11,4 +11,4 @@ const ErrorsReducer = (oldState = {sessionErrors: []}, action) => {
     }
 }
 
-export default SessionReducer
+export default SessionErrorsReducer
