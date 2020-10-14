@@ -13,6 +13,7 @@ const Navbar = (props) => {
         return (
             <div>
                 <Link to="/session/new">LOGIN LINK</Link>
+                <Link to="/users/new">SIGNUP LINK</Link>
             </div>
         )
     }
