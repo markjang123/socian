@@ -3,9 +3,14 @@ import React from 'react'
 class LoginForm extends React.Component {
     render(){
         return (
-            <form>
-                <input type="text"/>
-                <input type="password"/>
+            <form> 
+                <h1>Sign In</h1>
+                <label> Username:
+                    <input type="text"/>
+                </label>
+                <label> Password:
+                    <input type="password"/>
+                </label>
                 <input type="submit" value="Sign In"/>
             </form>
         )
