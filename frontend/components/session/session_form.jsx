@@ -12,6 +12,13 @@ class SessionForm extends React.Component {
         return e => {
             e.preventDefault()
             this.props.submitAction(user)
+                .then(() => this.props.requestUser(this.props.currentUserId))
+        }
+    }
+    componentDidMount(){
+        if (this.props.currentUserId){
+            debugger
+                dispatch(this.props.requestUser(this.props.currentUserId))
         }
     }
 

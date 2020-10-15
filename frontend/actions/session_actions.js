@@ -10,7 +10,6 @@ const receiveCurrentUserId = (userId) => {
 }
 
 const receiveSessionErrors = (sessionErrors) => {
-    debugger
     return {
         type: RECEIVE_SESSION_ERRORS,
         sessionErrors
