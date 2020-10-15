@@ -11,6 +11,11 @@
 .navbar-link {
     text-decoration: none;
 }
+.navbar-user-links {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
 #logo-link {
     height: 53px;
 }

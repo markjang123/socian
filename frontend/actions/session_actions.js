@@ -32,6 +32,7 @@ export const login = (user) => {
     }
 }
 export const logout = () => {
+    debugger
     return dispatch => {
         return SessionUtils.logout()
             .then(response => dispatch(receiveCurrentUserId(null)))
