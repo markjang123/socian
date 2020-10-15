@@ -14,4 +14,5 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+const NavbarContainer = connect(mapStateToProps, mapDispatchToProps)(Navbar)
+export default NavbarContainer
