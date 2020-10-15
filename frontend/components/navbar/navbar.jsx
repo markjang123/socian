@@ -3,6 +3,11 @@ import {Link} from 'react-router-dom'
 
 const Navbar = (props) => {
     const {currentUser, logout} = props
+    const {pathname} = props.location
+    debugger
+    const isSessionForm = () => {
+        return pathname === "/session/new" || pathname === "/users/new"
+    }
     const renderLinks = () => {
         if (!!currentUser){
             return (
@@ -27,8 +32,8 @@ const Navbar = (props) => {
                     <Link className="navbar-link" to="/">
                         <img id="logo-link" src={window.image} />
                     </Link>
-                    <input type="text" placeholder="Search and discover music"/>
-                    {renderLinks()}
+                    {isSessionForm() ? null: <input type="text" placeholder="Search and discover music"/>}
+                    {isSessionForm() ? null : renderLinks()}
                 </nav>
             </div>
         )

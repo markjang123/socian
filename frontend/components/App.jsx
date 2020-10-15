@@ -9,7 +9,7 @@ const App = () => {
     return (
         
         <div>
-            <NavbarContainer />
+            <Route path="/" component={NavbarContainer} />
             <Route path="/session/new" component={loginFormContainer} />
             <Route path="/users/new" component={signupFormContainer} />
             <Route path="/users/:userId" component={Profile} />
