@@ -1,6 +1,7 @@
 import * as SessionUtils from '../util/session_api_util'
 export const RECEIVE_CURRENT_USER_ID = 'RECEIVE_CURRENT_USER_ID';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const REMOVE_SESSION_ERRORS = 'REMOVE_SESSION_ERRORS'
 
 const receiveCurrentUserId = (userId) => {
     return {
@@ -13,6 +14,12 @@ const receiveSessionErrors = (sessionErrors) => {
     return {
         type: RECEIVE_SESSION_ERRORS,
         sessionErrors
+    }
+}
+
+const removeSessionErrors = () => {
+    return {
+        type: REMOVE_SESSION_ERRORS
     }
 }
 
@@ -32,10 +39,15 @@ export const login = (user) => {
     }
 }
 export const logout = () => {
-    debugger
     return dispatch => {
         return SessionUtils.logout()
             .then(response => dispatch(receiveCurrentUserId(null)))
             .fail(response => dispatch(receiveSessionErrors(response.responseJSON.errors)))
+    }
+}
+
+export const clearSessionErrors = () => {
+    return dispatch => {
+        dispatch(removeSessionErrors())
     }
 }
