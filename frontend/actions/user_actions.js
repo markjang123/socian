@@ -1,6 +1,6 @@
 import * as UserApiUtils from '../util/user_api_util'
 export const RECEIVE_USER = 'RECEIVE_USER'
-
+export const REMOVE_USER = 'REMOVE_USER'
 const receiveUser = user => {
     return {
         type: RECEIVE_USER,
@@ -8,9 +8,22 @@ const receiveUser = user => {
     }
 }
 
+const removeUser = userId => {
+    return {
+        type: REMOVE_USER,
+        userId
+    }
+}
+
 export const requestUser = userId => {
     return dispatch => {
         return UserApiUtils.fetchUser(userId)
             .then(response => dispatch(receiveUser(response)))
+    }
+}
+export const deleteUser = userId => {
+    return dispatch => {
+        return UserApiUtils.fetchUser(userId)
+            .then(response => dispatch(removeUser(response.id)))
     }
 }
