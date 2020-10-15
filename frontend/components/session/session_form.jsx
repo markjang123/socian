@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
         return e => {
             e.preventDefault()
             this.props.submitAction(user)
+                .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
                 .then(() => this.props.requestUser(this.props.currentUserId))
         }
     }
