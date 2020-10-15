@@ -51,8 +51,8 @@ class SessionForm extends React.Component {
     }
     render(){
         return (
-            <div className="login-form-wrapper">
-                <form className="login-form" onSubmit={this.handleSubmit(this.state)}> 
+            <div className="session-form-wrapper">
+                <form className="session-form" onSubmit={this.handleSubmit(this.state)}> 
                     <h3>{this.props.formType}</h3>
                     {this.renderFields()}
                     <label> Password
