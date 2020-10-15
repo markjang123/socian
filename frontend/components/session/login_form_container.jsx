@@ -4,8 +4,10 @@ import LoginForm from './login_form'
 
 const mapStateToProps = state => {
     return {
-        usernameOrPassword: "",
-        password: ""
+        user: {
+            username_or_email: "",
+            password: ""
+        }
     }
 }
 
@@ -14,5 +16,5 @@ const mapDispatchToProps = dispatch => {
         attemptLogin: user => dispatch(login(user))
     }
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
+const loginFormContainer = connect(mapStateToProps, mapDispatchToProps)(LoginForm)
+export default loginFormContainer

@@ -25,6 +25,7 @@ export const signup = (user) => {
     }
 }
 export const login = (user) => {
+    debugger
     return dispatch => {
        return SessionUtils.login(user)
                 .then(response => dispatch(receiveCurrentUserId(response.id)))
