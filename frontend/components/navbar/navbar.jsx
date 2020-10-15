@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 const Navbar = (props) => {
     const {currentUser, logout} = props
     const {pathname} = props.location
-    debugger
     const isSessionForm = () => {
         return pathname === "/session/new" || pathname === "/users/new"
     }

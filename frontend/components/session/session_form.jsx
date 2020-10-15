@@ -1,6 +1,7 @@
 import React from 'react'
 import SessionErrors from '../errors/session_errors'
 import {Link} from 'react-router-dom'
+import {clearSessionErrors} from '../../actions/session_actions'
 
 class SessionForm extends React.Component {
     constructor(props){
