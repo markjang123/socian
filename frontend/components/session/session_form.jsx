@@ -1,4 +1,5 @@
 import React from 'react'
+import SessionErrors from '../errors/session_errors'
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -61,6 +62,7 @@ class SessionForm extends React.Component {
                     </label>
                     <input type="submit" value={this.props.formType}/>
                 </form>
+                <SessionErrors />
             </div>
         )
     }
