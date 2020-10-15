@@ -1,20 +1,21 @@
 import {connect} from 'react-redux';
 import {login} from '../../actions/session_actions'
-import LoginForm from './login_form'
+import SessionForm from './session_form'
 
 const mapStateToProps = state => {
     return {
         user: {
             username_or_email: "",
             password: ""
-        }
+        },
+        formType: "Log in"
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        attemptLogin: user => dispatch(login(user))
+        submitAction: user => dispatch(login(user))
     }
 }
-const loginFormContainer = connect(mapStateToProps, mapDispatchToProps)(LoginForm)
+const loginFormContainer = connect(mapStateToProps, mapDispatchToProps)(SessionForm)
 export default loginFormContainer
