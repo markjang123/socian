@@ -1,5 +1,6 @@
 import React from 'react'
 import SessionErrors from '../errors/session_errors'
+import {Link} from 'react-router-dom'
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -56,7 +57,17 @@ class SessionForm extends React.Component {
                 </div>
             )
         }
-
+    }
+    renderBottomMessage(){
+        if (this.props.formType === "Log in") {
+            return (
+                <p>Don't have an account? <Link className="form-link" to="/users/new">sign up.</Link></p>
+            )
+        } else {
+            return (
+                <p>Already have an account? <Link className="form-link" to="/session/new">Log in.</Link></p>
+            )
+        }
     }
     render(){
         return (
@@ -71,6 +82,7 @@ class SessionForm extends React.Component {
                     <input type="submit" value={this.props.formType}/>
                 </form>
                 <SessionErrors />
+                {this.renderBottomMessage()}
             </div>
         )
     }
