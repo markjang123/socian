@@ -10,6 +10,7 @@ const receiveCurrentUserId = (userId) => {
 }
 
 const receiveSessionErrors = (sessionErrors) => {
+    debugger
     return {
         type: RECEIVE_SESSION_ERRORS,
         sessionErrors
@@ -21,20 +22,20 @@ export const signup = (user) => {
     return dispatch => {
        return SessionUtils.signup(user)
                 .then(response => dispatch(receiveCurrentUserId(response.id)))
-                .catch(response => dispatch(receiveSessionErrors(response.errors)))
+                .fail(response => dispatch(receiveSessionErrors(response.responseJSON.errors)))
     }
 }
 export const login = (user) => {
     return dispatch => {
        return SessionUtils.login(user)
                 .then(response => dispatch(receiveCurrentUserId(response.id)))
-                .catch(response => dispatch(receiveSessionErrors(response.errors)))
+                .fail(response => dispatch(receiveSessionErrors(response.responseJSON.errors)))
     }
 }
 export const logout = () => {
     return dispatch => {
         return SessionUtils.logout()
             .then(response => dispatch(receiveCurrentUserId(null)))
-            .catch(response => dispatch(receiveSessionErrors(response.errors)))
+            .fail(response => dispatch(receiveSessionErrors(response.responseJSON.errors)))
     }
 }
