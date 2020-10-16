@@ -14,8 +14,8 @@ const App = () => {
         <div>
             <NavbarContainer />
             <Switch>
-                <Route exact path="/session/new" component={loginFormContainer} />
-                <Route exact path="/users/new" component={signupFormContainer} />
+                <AuthRoute exact path="/session/new" component={loginFormContainer} />
+                <AuthRoute exact path="/users/new" component={signupFormContainer} />
                 <Route path="/users/:userId" component={Profile} />
                 <Route exact path="/" component={Splash} />
                 <Route component={Error404} />

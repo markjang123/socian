@@ -3,7 +3,7 @@ import React from 'react'
 import Root from './components/root'
 import configureStore from './store/store'
 import {requestUser} from './actions/user_actions'
-import {clearSessionErrors} from './actions/session_actions'
+import {login} from './actions/session_actions'
 
 
 document.addEventListener("DOMContentLoaded",() => {
@@ -12,6 +12,6 @@ document.addEventListener("DOMContentLoaded",() => {
     window.dispatch = store.dispatch;
     window.getState = store.getState;
     window.requestUser = requestUser
-    window.clearSessionErrors = clearSessionErrors
+    window.login = login
     ReactDOM.render(<Root store={store} />, root)
 })
