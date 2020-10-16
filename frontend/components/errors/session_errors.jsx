@@ -12,9 +12,9 @@ class SessionErrors extends React.Component {
     render() {
         let state = getState()
         return (
-            <p>
-                {state.errors.sessionErrors}
-            </p>
+            <ul className="errors-list">
+                {state.errors.sessionErrors.map(error => <li>{error}</li>)}
+            </ul>
         )
     }
 }

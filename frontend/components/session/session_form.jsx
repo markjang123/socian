@@ -33,27 +33,27 @@ class SessionForm extends React.Component {
     renderFields(){
         if (this.props.formType === "Log in"){
             return (
-                <label> Username / email
-                    <input type="text" onChange={this.update("username_or_email")} value={this.state.usernameOrEmail} />
-                </label>
+                <div className="form-element">
+                    <label for="username-or-email-field" className="form-label"> Username / email </label>
+                    <input id="username-or-email-field" type="text" onChange={this.update("username_or_email")} value={this.state.usernameOrEmail} />
+                </div>
             )
         } else {
             return (
                 <div>
-                    <label> Username
-                        <input type="text" onChange={this.update("username")} value={this.state.username} />
+                    <label className="form-label" for="username-field"> Username </label>
+                        <input id="username-field" className="form-element" type="text" onChange={this.update("username")} value={this.state.username} />
+                    <label className="form-label"> Email
+                        <input className="form-element" type="text" onChange={this.update("email")} value={this.state.email} />
                     </label>
-                    <label> Email
-                        <input type="text" onChange={this.update("email")} value={this.state.email} />
+                    <label className="form-label"> Are you a fan or an artist?
+                        <input className="form-element" type="text" onChange={this.update("user_type")} value={this.state.user_type} />
                     </label>
-                    <label> Are you a fan or an artist?
-                        <input type="text" onChange={this.update("user_type")} value={this.state.user_type} />
+                    <label className="form-label"> Location
+                        <input className="form-element" type="text" onChange={this.update("location")} value={this.state.location} />
                     </label>
-                    <label> Location
-                        <input type="text" onChange={this.update("location")} value={this.state.location} />
-                    </label>
-                    <label> Description
-                        <input type="text" onChange={this.update("description")} value={this.state.description} />
+                    <label className="form-label"> Description
+                        <input className="form-element" type="text" onChange={this.update("description")} value={this.state.description} />
                     </label>
                 </div>
             )
@@ -62,11 +62,11 @@ class SessionForm extends React.Component {
     renderBottomMessage(){
         if (this.props.formType === "Log in") {
             return (
-                <p>Don't have an account? <Link className="form-link" to="/users/new">sign up.</Link></p>
+                <p className="form-footer">Don't have an account? <Link className="form-link" to="/users/new">Sign up.</Link></p>
             )
         } else {
             return (
-                <p>Already have an account? <Link className="form-link" to="/session/new">Log in.</Link></p>
+                <p className="form-footer">Already have an account? <Link className="form-link" to="/session/new">Log in.</Link></p>
             )
         }
     }
@@ -74,15 +74,18 @@ class SessionForm extends React.Component {
         return (
             <div className="session-form-wrapper">
 
+                <h3 className="form-header">{this.props.formType}</h3>
                 <form className="session-form" onSubmit={this.handleSubmit(this.state)}> 
-                    <h3>{this.props.formType}</h3>
                     {this.renderFields()}
-                    <label> Password
-                        <input type="password" onChange={this.update("password")} value={this.state.password}/>
-                    </label>
-                    <input type="submit" value={this.props.formType}/>
+                    <div className="form-element">
+                        <label className="form-label" for="password-field"> Password </label>
+                        <input id="password-field" type="password" onChange={this.update("password")} value={this.state.password}/>
+                    </div>
+                    <div className="form-element"> 
+                        <input id="submit-button" type="submit" value={this.props.formType}/>
+                    </div>
                 </form>
-                <SessionErrors />
+                <SessionErrors className="errors-container"/>
                 {this.renderBottomMessage()}
             </div>
         )

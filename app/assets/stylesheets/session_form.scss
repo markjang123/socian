@@ -1,11 +1,73 @@
+.errors-list {
+    font-size: 12px;
+    color: red;
+    list-style: none;
+}
 .session-form {
+    margin: 30px auto;
+    padding: 50px auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-header {
+    font-size: 18px;
+    font-weight: 500;
+}
+.form-footer {
+    color: #818285;
+    font-size: 12px;
 }
 .session-form-wrapper {
-    height: 200px;
-    width: 200px;
+    position: fixed;
+    // margin: 0 auto;
+    top: 5%;
+    left: 25%;
+    right: 25%;
+    // bottom: 50%;
+    // margin-top: -50%;
+    // margin-left: -100%;
+    text-align: center;
+    padding: 50px;
+    display: inline-block;
+    height: 600px;
+    width: 600px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .form-link {
     text-decoration: none;
+    color: rgb(0,161,198);
+}
+.form-element {
+    width: 100%;
+    margin: 10px auto;
+    padding: 12px 0px 12px 0px;
+    text-align: center;
+    input {
+        display: inline-block;
+        width: 300px;
+        height: 36px;
+        margin-right: 100px;
+        border-width: 1px;
+    }
+    #submit-button {
+        width: 308px;
+        height: 36px;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: rgb(0,161,198);
+        margin-left: 167px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+.form-label {
+    display: inline-block;
+    width: 155px;
+    font-size: 16px;
+    margin-right: 16px;
+    text-align: right;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
