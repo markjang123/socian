@@ -51,9 +51,10 @@ class SessionForm extends React.Component {
                     </div>
                     <div className="form-element">
                         <label className="form-label"> Type </label>
-                        <select className="form-element">
-                            <option>fan</option>
-                            <option>artist</option>
+                        <select className="form-element" value={this.state.user_type} onChange={this.update("user_type")}>
+                            <option defaultValue={true}>--select one--</option>
+                            <option value="fan">fan</option>
+                            <option value="artist">artist</option>
                         </select>
                         {/* <input className="form-element" type="select" onChange={this.update("user_type")} value={this.state.user_type} /> */}
                     </div>
