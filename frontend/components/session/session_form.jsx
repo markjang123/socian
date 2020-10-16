@@ -1,6 +1,7 @@
 import React from 'react'
 import SessionErrors from '../errors/session_errors'
 import {Link} from 'react-router-dom'
+import {login} from '../../actions/session_actions'
 import {clearSessionErrors} from '../../actions/session_actions'
 
 class SessionForm extends React.Component {
@@ -83,7 +84,7 @@ class SessionForm extends React.Component {
     }
     demoUser(e){
         e.preventDefault()
-        this.props.submitAction({username_or_email: "demoUser", password: "demopassword"})
+        dispatch(login({username_or_email: "demoUser", password: "demopassword"}))
             .then(() => this.props.requestUser(this.props.currentUserId))
             .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
     }
@@ -104,7 +105,7 @@ class SessionForm extends React.Component {
                 </form>
                 <SessionErrors className="errors-container"/>
                 {this.renderBottomMessage()}
-                <a href="#" onClick={this.demoUser}>try as a demo user.</a>
+                <a href="#" onClick={this.demoUser} id="demo-user-link">try as a demo user.</a>
             </div>
         )
     }
