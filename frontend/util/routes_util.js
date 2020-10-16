@@ -1,4 +1,5 @@
-import {Route, Redirect} from 'react-router-dom'
+import {Route, Redirect, withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 const Auth = ({component: Component, path, loggedIn, exact}) => {
     return <Route exact={exact} loggedIn={loggedIn} path={path} render={props => {
         if (loggedIn) {
@@ -24,3 +25,6 @@ const mapStateToProps = state => {
         loggedIn: Boolean(state.session.currentUserId)
     }
 }
+
+export const AuthRoute = withRouter(connect(mapStateToProps)(Auth))
+export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected))

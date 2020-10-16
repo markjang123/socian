@@ -6,6 +6,7 @@ import NavbarContainer from './navbar/navbar_container'
 import Profile from './users/profile'
 import Splash from './splash/splash'
 import Error404 from './errors/error_404'
+import {AuthRoute, ProtectedRoute} from '../util/routes_util'
 
 const App = () => {
     return (
