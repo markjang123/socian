@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
         super(props)
         this.state = this.props.user
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoUser = this.demoUser.bind(this)
     }
 
     handleSubmit(user){
@@ -20,7 +21,6 @@ class SessionForm extends React.Component {
     }
     componentDidMount(){
         if (this.props.currentUserId){
-            debugger
                 dispatch(this.props.requestUser(this.props.currentUserId))
         }
     }
@@ -81,6 +81,12 @@ class SessionForm extends React.Component {
             )
         }
     }
+    demoUser(e){
+        e.preventDefault()
+        this.props.submitAction({username_or_email: "demoUser", password: "demopassword"})
+            .then(() => this.props.requestUser(this.props.currentUserId))
+            .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
+    }
     render(){
         return (
             <div className="session-form-wrapper">
@@ -98,6 +104,7 @@ class SessionForm extends React.Component {
                 </form>
                 <SessionErrors className="errors-container"/>
                 {this.renderBottomMessage()}
+                <a href="#" onClick={this.demoUser}>try as a demo user.</a>
             </div>
         )
     }
