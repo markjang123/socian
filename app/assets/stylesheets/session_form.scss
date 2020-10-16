@@ -4,6 +4,8 @@
     list-style: none;
 }
 .session-form {
+    position: relative;
+    height: 500px;
     margin: 30px auto;
     padding: 50px auto;
     display: flex;
@@ -40,11 +42,20 @@
     color: rgb(0,161,198);
 }
 .form-element {
+    position: relative;
     width: 100%;
     margin: 10px auto;
     padding: 12px 0px 12px 0px;
     text-align: center;
     input {
+        display: inline-block;
+        width: 300px;
+        height: 36px;
+        margin-right: 100px;
+        border-width: 1px;
+    }
+    select {
+        padding: 6px 0px 6px 0px;
         display: inline-block;
         width: 300px;
         height: 36px;

@@ -41,20 +41,30 @@ class SessionForm extends React.Component {
         } else {
             return (
                 <div>
-                    <label className="form-label" for="username-field"> Username </label>
-                        <input id="username-field" className="form-element" type="text" onChange={this.update("username")} value={this.state.username} />
-                    <label className="form-label"> Email
-                        <input className="form-element" type="text" onChange={this.update("email")} value={this.state.email} />
-                    </label>
-                    <label className="form-label"> Are you a fan or an artist?
-                        <input className="form-element" type="text" onChange={this.update("user_type")} value={this.state.user_type} />
-                    </label>
-                    <label className="form-label"> Location
+                    <div className="form-element">
+                        <label className="form-label" for="username-field"> Username </label>
+                        <input id="username-field" type="text" onChange={this.update("username")} value={this.state.username} />
+                    </div>
+                    <div className="form-element">
+                        <label className="form-label"> Email </label>
+                        <input type="text" onChange={this.update("email")} value={this.state.email} />
+                    </div>
+                    <div className="form-element">
+                        <label className="form-label"> Type </label>
+                        <select className="form-element">
+                            <option>fan</option>
+                            <option>artist</option>
+                        </select>
+                        {/* <input className="form-element" type="select" onChange={this.update("user_type")} value={this.state.user_type} /> */}
+                    </div>
+                    {/* <div className="form-element">
+                        <label className="form-label"> Location </label>
                         <input className="form-element" type="text" onChange={this.update("location")} value={this.state.location} />
-                    </label>
-                    <label className="form-label"> Description
+                    </div>
+                    <div className="form-element">
+                        <label className="form-label"> Description </label>
                         <input className="form-element" type="text" onChange={this.update("description")} value={this.state.description} />
-                    </label>
+                    </div> */}
                 </div>
             )
         }
