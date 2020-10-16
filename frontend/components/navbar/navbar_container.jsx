@@ -2,10 +2,11 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {logout} from '../../actions/session_actions'
 import Navbar from './navbar'
+import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.entities.users[state.session.currentUserId]
+        currentUser: state.entities.users[state.session.currentUserId],
     }
 }
 
@@ -16,4 +17,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 const NavbarContainer = connect(mapStateToProps, mapDispatchToProps)(Navbar)
-export default NavbarContainer
+export default withRouter(NavbarContainer)

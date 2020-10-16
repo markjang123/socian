@@ -1,18 +1,24 @@
 import React from 'react'
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import loginFormContainer from './session/login_form_container';
 import signupFormContainer from './session/signup_form_container';
 import NavbarContainer from './navbar/navbar_container'
 import Profile from './users/profile'
+import Splash from './splash/splash'
+import Error404 from './errors/error_404'
 
 const App = () => {
     return (
         
         <div>
-            <Route path="/" component={NavbarContainer} />
-            <Route path="/session/new" component={loginFormContainer} />
-            <Route path="/users/new" component={signupFormContainer} />
-            <Route path="/users/:userId" component={Profile} />
+            <NavbarContainer />
+            <Switch>
+                <Route exact path="/session/new" component={loginFormContainer} />
+                <Route exact path="/users/new" component={signupFormContainer} />
+                <Route path="/users/:userId" component={Profile} />
+                <Route exact path="/" component={Splash} />
+                <Route component={Error404} />
+            </Switch>
         </div>
     )
 }
