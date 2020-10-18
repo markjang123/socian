@@ -16,9 +16,13 @@ const removeUser = userId => {
 }
 
 export const requestUser = userId => {
+    debugger
     return dispatch => {
         return UserApiUtils.fetchUser(userId)
-            .then(response => dispatch(receiveUser(response)))
+            .then(response => {
+                dispatch(receiveUser(response))
+                return response
+            })
     }
 }
 export const deleteUser = userId => {

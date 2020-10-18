@@ -1,10 +1,11 @@
 import {connect} from 'react-redux'
 import Profile from './profile'
-import requestUser from '../../actions/user_actions'
+import {requestUser} from '../../actions/user_actions'
 
 const mapStateToProps = state => {
     return {
-        currentUser = state.entities.users[state.session.currentUserId]
+        currentUser: state.entities.users[state.session.currentUserId],
+        currentUserId: state.session.currentUserId
     }
 }
 
@@ -14,4 +15,5 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
+export default ProfileContainer 
