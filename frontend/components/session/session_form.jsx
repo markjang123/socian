@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === "Log in"){
             return (
                 <div className="form-element">
-                    <label for="username-or-email-field" className="form-label"> Username / email </label>
+                    <label htmlFor="username-or-email-field" className="form-label"> Username / email </label>
                     <input id="username-or-email-field" type="text" onChange={this.update("username_or_email")} value={this.state.usernameOrEmail} />
                 </div>
             )
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
             return (
                 <div>
                     <div className="form-element">
-                        <label className="form-label" for="username-field"> Username </label>
+                        <label className="form-label" htmlFor="username-field"> Username </label>
                         <input id="username-field" type="text" onChange={this.update("username")} value={this.state.username} />
                     </div>
                     <div className="form-element">
@@ -85,7 +85,7 @@ class SessionForm extends React.Component {
                 <form className="session-form" onSubmit={this.handleSubmit(this.state)}> 
                     {this.renderFields()}
                     <div className="form-element">
-                        <label className="form-label" for="password-field"> Password </label>
+                        <label className="form-label" htmlFor="password-field"> Password </label>
                         <input id="password-field" type="password" onChange={this.update("password")} value={this.state.password}/>
                     </div>
                     <div className="form-element"> 
