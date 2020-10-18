@@ -1,1 +1,8 @@
+    <% if logged_in? %>
+      <script>
+        window.currentUser = 
+        <%= render("api/users/info.json.jbuilder", user: current_user).html_safe %>
+      </script>
+    <% end %>
+
 <div id="root">SOCIAN REACC BROKE</div>

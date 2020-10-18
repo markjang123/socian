@@ -20,7 +20,6 @@ class SessionForm extends React.Component {
         }
     }
     componentDidMount(){
-        debugger
         if (this.props.currentUserId){
                 dispatch(this.props.requestUser(this.props.currentUserId))
         }

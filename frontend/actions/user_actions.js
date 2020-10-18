@@ -16,7 +16,6 @@ const removeUser = userId => {
 }
 
 export const requestUser = userId => {
-    debugger
     return dispatch => {
         return UserApiUtils.fetchUser(userId)
             .then(response => {

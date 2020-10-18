@@ -11,7 +11,7 @@ class Profile extends React.Component {
         this.state = {}
     }
   
-    renderCorrectly(){
+    renderIfStateIsDefined(){
         if (!!this.state.currentUser){
         return <h3>{this.state.currentUser.username}'s Page</h3>
         } else {
@@ -19,9 +19,7 @@ class Profile extends React.Component {
         }
     }
     render(){
-        let state = getState()
-        console.log(state)
-        return this.renderCorrectly()
+        return this.renderIfStateIsDefined()
     }
 }
 

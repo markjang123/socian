@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :require_logged_in, :logged_in?
     def current_user
-        @current_user = User.find_by_credentials(params[:user][:username_or_email], params[:user][:password])
+        @current_user = User.find_by(session_token: session[:session_token])
     end
 
     def require_logged_in
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in?
-        !!@current_user
+        !!current_user
     end
 
     def login!(user)
