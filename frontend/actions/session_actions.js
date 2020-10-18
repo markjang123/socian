@@ -34,7 +34,10 @@ export const signup = (user) => {
 export const login = (user) => {
     return dispatch => {
        return SessionUtils.login(user)
-                .then(response => dispatch(receiveCurrentUserId(response.id)))
+                .then(response => {
+                    dispatch(receiveCurrentUserId(response.id))
+                    return response.id
+                })
                 .fail(response => dispatch(receiveSessionErrors(response.responseJSON.errors)))
     }
 }

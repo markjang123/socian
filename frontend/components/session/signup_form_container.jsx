@@ -25,5 +25,5 @@ const mapDispatchToProps = dispatch => {
         requestUser: userId => dispatch(requestUser(userId))
     }
 }
-const signupFormContainer = connect(mapStateToProps, mapDispatchToProps)(SessionForm)
-export default signupFormContainer
+const SignupFormContainer = connect(mapStateToProps, mapDispatchToProps)(SessionForm)
+export default SignupFormContainer

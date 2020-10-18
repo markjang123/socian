@@ -16,11 +16,11 @@ class SessionForm extends React.Component {
         return e => {
             e.preventDefault()
             this.props.submitAction(user)
-                .then(() => this.props.requestUser(this.props.currentUserId))
                 .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
         }
     }
     componentDidMount(){
+        debugger
         if (this.props.currentUserId){
                 dispatch(this.props.requestUser(this.props.currentUserId))
         }
@@ -57,16 +57,7 @@ class SessionForm extends React.Component {
                             <option value="fan">fan</option>
                             <option value="artist">artist</option>
                         </select>
-                        {/* <input className="form-element" type="select" onChange={this.update("user_type")} value={this.state.user_type} /> */}
                     </div>
-                    {/* <div className="form-element">
-                        <label className="form-label"> Location </label>
-                        <input className="form-element" type="text" onChange={this.update("location")} value={this.state.location} />
-                    </div>
-                    <div className="form-element">
-                        <label className="form-label"> Description </label>
-                        <input className="form-element" type="text" onChange={this.update("description")} value={this.state.description} />
-                    </div> */}
                 </div>
             )
         }
@@ -85,8 +76,7 @@ class SessionForm extends React.Component {
     demoUser(e){
         e.preventDefault()
         dispatch(login({username_or_email: "demoUser", password: "demopassword"}))
-            .then(() => this.props.requestUser(this.props.currentUserId))
-            .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
+            .then((currentUserId) => this.props.history.push(`/users/${currentUserId}`))
     }
     render(){
         return (
