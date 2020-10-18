@@ -80,9 +80,9 @@ class SessionForm extends React.Component {
     render(){
         return (
             <div className="session-form-wrapper">
-
-                <h3 className="form-header">{this.props.formType}</h3>
                 <form className="session-form" onSubmit={this.handleSubmit(this.state)}> 
+                <h3 className="form-header">{this.props.formType}</h3>
+                <div className="divider" ></div>
                     {this.renderFields()}
                     <div className="form-element">
                         <label className="form-label" htmlFor="password-field"> Password </label>
@@ -91,10 +91,12 @@ class SessionForm extends React.Component {
                     <div className="form-element"> 
                         <input id="submit-button" type="submit" value={this.props.formType}/>
                     </div>
+                    <div className="footer-container">
+                        {this.renderBottomMessage()}
+                        <a href="#" onClick={this.demoUser} id="demo-user-link">try as a demo user.</a>  
+                    </div>
                 </form>
                 <SessionErrors className="errors-container"/>
-                {this.renderBottomMessage()}
-                <a href="#" onClick={this.demoUser} id="demo-user-link">try as a demo user.</a>
             </div>
         )
     }

@@ -3,6 +3,12 @@
     color: red;
     list-style: none;
 }
+.divider {
+    height: 0px;
+    width: 100%;
+    border-top: 2px dotted #ccc;
+    margin: 36px 0 28px 0
+}
 .session-form {
     position: relative;
     height: 500px;
@@ -14,8 +20,11 @@
     align-items: center;
 }
 .form-header {
+    position: relative;
+    left: 35px;
     font-size: 18px;
     font-weight: 500;
+    top: 10px;
 }
 .form-footer {
     color: #818285;
@@ -23,7 +32,7 @@
 }
 #demo-user-link {
     font-size: 12px;
-    text-decoration: none;
+text-decoration: none;
     color: rgb(0,161,198);
 }
 .session-form-wrapper {
@@ -86,4 +95,9 @@
     margin-right: 16px;
     text-align: right;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.footer-container {
+    text-align: center;
+    margin-left: 60px;
+    width: 300px;
 }
