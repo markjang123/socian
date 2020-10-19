@@ -31,7 +31,7 @@ const Navbar = (props) => {
                     <Link className="navbar-home-link" to="/">
                         <img id="logo-link" src={window.image} />
                     </Link>
-                    {isSessionForm() ? null: <input type="text" placeholder="Search and discover music"/>}
+                    {isSessionForm() ? null: <input type="text" className="searchbar" placeholder="Search and discover music"/>}
                     {isSessionForm() ? null : renderLinks()}
                 </nav>
             </div>
