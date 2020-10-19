@@ -1,10 +1,22 @@
 .album-index-item {
+    display: flex;
+    flex-direction: column;
     border-style: solid;
     width: 172px;
     height: 208px;
+    margin: 5px;
     .album-art {
         border-style: solid;
         width: 172px;
         height: 172px;
     }
+}
+.album-index {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    border-style: solid;
+    height: 500px;
+    width: 60%;
+    font-size: x-large;
 }

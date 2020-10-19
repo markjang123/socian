@@ -3,18 +3,13 @@ import AlbumIndexItem from './index_item'
 
 const mapStateToProps = state => {
     return {
-        user: {
-            username_or_email: "",
-            password: ""
-        },
-        currentUserId: "hi",
-        formType: "Log in"
+        yes: "yes"
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        submitAction: dispatch()
+        submitAction: "yes"
     }
 }
 const AlbumIndexItemContainer = connect(mapStateToProps, mapDispatchToProps)(AlbumIndexItem)
