@@ -28,7 +28,7 @@ const Navbar = (props) => {
         return (
             <div className={!isSessionForm() ? "navbar-wrapper" : "navbar-wrapper grayed"}>
                 <nav className={!isSessionForm() ? "navbar" : "navbar grayed"}>
-                    <Link className="navbar-link" to="/">
+                    <Link className="navbar-home-link" to="/">
                         <img id="logo-link" src={window.image} />
                     </Link>
                     {isSessionForm() ? null: <input type="text" placeholder="Search and discover music"/>}
