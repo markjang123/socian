@@ -11,6 +11,9 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :artist_id,
         class_name: :Album
+    has_many :tracks,
+        through: :albums,
+        source: :tracks
         
     def self.find_by_credentials(username_or_email, password)
         # debugger
