@@ -7,6 +7,11 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6}, allow_nil: true
     after_initialize :ensure_session_token
     attr_reader :password
+    has_many :albums,
+        primary_key: :id,
+        foreign_key: :artist_id,
+        class_name: :Album
+        
     def self.find_by_credentials(username_or_email, password)
         # debugger
         @user = User.find_by(username: username_or_email) || User.find_by(email: username_or_email)
