@@ -6,7 +6,6 @@ class Splash extends React.Component {
         return (
             <div>
                 <div className="splash-header">
-                    Splash
                 </div>
                 <AlbumIndex className="album-index" />
 
