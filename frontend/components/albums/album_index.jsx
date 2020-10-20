@@ -10,7 +10,6 @@ class AlbumIndex extends React.Component {
         $.ajax({
             url: "/api/albums"
         }).then(albums => {
-            debugger
             this.setState({albums})
         })
     }
@@ -19,7 +18,6 @@ class AlbumIndex extends React.Component {
     }
    
     render() {
-        debugger
         return (
         <ul className="album-index">
             {this.state.albums ? this.state.albums.map((album, idx) => <AlbumIndexItem artist={album.artist} cover={album.photoUrl} title={album.title} key={idx} />) : null}

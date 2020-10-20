@@ -13,7 +13,7 @@ class SessionErrors extends React.Component {
         let state = getState()
         return (
             <ul className="errors-list">
-                {state.errors.sessionErrors.map(error => <li>{error}</li>)}
+                {state.errors.sessionErrors.map((error, idx) => <li key={idx}> {error}</li>)}
             </ul>
         )
     }
