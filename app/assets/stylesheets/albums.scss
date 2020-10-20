@@ -1,3 +1,46 @@
 // Place all the styles related to the albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.album-index {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 1000px;
+    width: 800px;
+    margin: auto;
+    overflow-y: auto;
+    .album-index-item {
+        display: flex;
+        flex-direction: column;
+        width: 172px;
+        height: 208px;
+        margin: 5px;
+        align-items: center;
+        .album-art {
+            display: inline-block;
+            height: 172px;
+            width: 172px;
+        }
+        .album-art-container {
+            height: 172px;
+            width: 172px;
+        }
+    }
+}
+                    .album-title-link {
+                        font-family: Arial, Helvetica, sans-serif;;
+                        font-weight: bold;
+                        font-size: 12px;
+                        margin: 5px;
+                        text-decoration: none;
+                        
+                    }
+                    .album-title-link:hover {
+                        text-decoration: underline;
+                    }
+                    .album-artist-link {
+                        font-family: Arial, Helvetica, sans-serif;;
+                        font-size: 12px;
+                        text-decoration: none;
+                    }
+    

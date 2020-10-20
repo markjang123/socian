@@ -8,11 +8,11 @@ class AlbumIndexItem extends React.Component {
         debugger
         return (
             <div className="album-index-item">
-                <div className="album-art">
-                    <img src={this.props.cover} />
+                <div className="album-art-container">
+                    <img className="album-art" src={this.props.cover} />
                 </div>
-                <Link to='/'>{this.props.title}</Link>
-                <Link to='/'>{this.props.artist.username}</Link>
+                <Link className="album-title-link" to='/'>{this.props.title}</Link>
+                <Link className="album-artist-link" to='/'>{this.props.artist.username}</Link>
             </div>
         )
     }
