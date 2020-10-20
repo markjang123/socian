@@ -1,6 +1,6 @@
 import React from 'react'
 import NavbarContainer from '../navbar/navbar_container'
-import AlbumIndex from '../albums/index'
+import AlbumIndex from '../albums/album_index'
 class Splash extends React.Component {
     render() {
         return (

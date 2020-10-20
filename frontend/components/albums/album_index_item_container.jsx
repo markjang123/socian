@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import AlbumIndexItem from './index_item'
+import AlbumIndexItem from './album_index_item'
 
 const mapStateToProps = state => {
     return {
