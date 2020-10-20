@@ -54,6 +54,7 @@ Track.create(album_id: flamingo.id, title: "Flamingo", length: "3:17")
 flamingo_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/flamingo.jpg")
 flamingo.cover.attach(io: flamingo_cover, filename: "flamingo.jpg")
 time_n_place = Album.create(artist_id: kkb.id, title: "Time \'n\' Place", release_date: Date.new(2018, 10, 1))
+Track.create(album_id: time_n_place.id, title: "Outside", length: "1:51")
 time_n_place_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/time_'n'_place.jpg")
 time_n_place.cover.attach(io: time_n_place_cover, filename: "time_n_place.jpg")
 
