@@ -1,13 +1,13 @@
 import React from 'react'
 import NavbarContainer from '../navbar/navbar_container'
-import AlbumIndex from '../albums/album_index'
+import AlbumIndexContainer from '../../components/albums/album_index_container'
 class Splash extends React.Component {
     render() {
         return (
             <div>
                 <div className="splash-header">
                 </div>
-                <AlbumIndex className="album-index" />
+                <AlbumIndexContainer className="album-index" />
 
             </div>
         )

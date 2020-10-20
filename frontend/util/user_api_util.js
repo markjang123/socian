@@ -1,4 +1,3 @@
-import { $CombinedState } from "redux"
 
 export const fetchUser = userId => {
     return $.ajax({
