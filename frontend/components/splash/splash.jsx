@@ -12,6 +12,7 @@ class Splash extends React.Component {
                         <SmallContent />
                     </div>
                 </div>
+                <h3 className="album-index-header">DISCOVER</h3>
                 <AlbumIndexContainer className="album-index" />
 
             </div>

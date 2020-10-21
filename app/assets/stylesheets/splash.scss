@@ -3,7 +3,7 @@
     width: 100%;
     font-size: x-large;
     background-color: rgb(34,34,34);
-    margin-top: 20px;
+    margin: 20px 0px 92px 0px;
     .header-content {
         display: flex;
         // flex-direction: row-reverse;
@@ -27,13 +27,15 @@
 .small-content-container {
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 .small-content-item {
+    cursor: pointer;
     position: relative;
     overflow: hidden;
-    border: 1px solid;
     height: 33%;
     width: 100%;
+    
 }
 .small-item-details {
     position: absolute;
@@ -43,9 +45,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    // border: 2px solid;
     height: 40%;
-    // background-color: red;
     vertical-align: bottom;
 }
 .small-item-title {
@@ -69,11 +69,15 @@
 .small-item-image {
     object-fit: contain;
     width: 100%;
-    // -webkit-filter: blur(1px);
+}
+.small-content-item:hover {
+    // -webkit-filter: blur(3px);
     // -moz-filter: blur(3px); 
     // -o-filter: blur(3px);
     // -ms-filter: blur(3px);
     // filter: blur(3px); 
+    opacity: 0.9;
+
 }
 
 .big-content-image {
@@ -81,11 +85,54 @@
     width: 100%;
 }
 .big-content {
+    background: white;
     overflow: hidden;
+    position: relative;
+}
+.big-content-image {
+    position: absolute;
+}
+.big-content:hover {
+    opacity: 0.9;
+    cursor: pointer;
 }
 .big-content-details {
+    left: 100px;
+    bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    position: absolute;
+    z-index: 100;
     height: 158px;
     width: 826px;
-    border: 5px solid;
-    border-color: red;
+    .big-content-title {
+        font-size: 32px;
+        font-weight: bold;
+        height: 37px;
+        margin: 0px 0px 10px;
+    }
+    .big-content-subtitle {
+        font-size: 16px;
+        height: 37px;
+        margin: 6px 0px 20px;
+        font-weight: lighter;
+    }
+    .link-button {
+        font-weight: bold;
+        padding: 8px 14px 8px 14px;
+        color: white;
+        background-color: transparent;
+        border-radius: 5px;
+        border-color: white;
+        margin-top: 10px;
+    }
+}
+.album-index-header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    color: #408ea3;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
 }
