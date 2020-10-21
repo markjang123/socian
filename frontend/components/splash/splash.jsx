@@ -1,11 +1,16 @@
 import React from 'react'
-import NavbarContainer from '../navbar/navbar_container'
 import AlbumIndexContainer from '../../components/albums/album_index_container'
+import SmallContent from './small-content'
+import BigContent from './big_content'
 class Splash extends React.Component {
     render() {
         return (
             <div>
                 <div className="splash-header">
+                    <div className="header-content">
+                        <BigContent imageUrl="https://kerokerobonito.com/kerokero4%20(1).jpg" />
+                        <SmallContent />
+                    </div>
                 </div>
                 <AlbumIndexContainer className="album-index" />
 
