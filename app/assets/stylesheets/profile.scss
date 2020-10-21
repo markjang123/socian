@@ -1,0 +1,40 @@
+.profile-container {
+    background-color: black;
+    height: 100vh;
+    min-height: 100vh;
+}
+.profile-body {
+    background-color: white;
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0 465px 0;
+    position: relative;
+}
+.profile-banner {
+    height: 180px;
+    width: 100%;
+    margin: 0px;
+    border: none;
+    position: relative;
+    // background-color: red;
+}
+.profile-tab-index {
+    top: 0px;
+    height: 38px;
+    background-color: #D5E0E6;
+    margin: 0px;
+    display:flex;
+    padding: 0px 15px;
+}
+.profile-tab {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    vertical-align: middle;
+    padding: 8px 15px 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.profile-tab:hover {
+    border-top: 2px solid;
+}
+

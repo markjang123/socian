@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ProfileBody from './profile_body'
 class Profile extends React.Component {
     constructor(props){
         super(props)
@@ -13,9 +13,11 @@ class Profile extends React.Component {
     }
   
     renderIfStateIsDefined(){
-        debugger
         if (!!this.state.pageUser){
-        return <h3>{this.state.pageUser.username}'s Profile Page</h3>
+        return (<div className="profile-container">
+                <ProfileBody />
+
+        </div>)
         } else {
             return null
         }
