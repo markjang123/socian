@@ -11,7 +11,7 @@ class AlbumIndexItem extends React.Component {
                     <img className="album-art" src={this.props.cover} />
                 </div>
                 <Link className="album-title-link" to='/'>{this.props.title}</Link>
-                <Link className="album-artist-link" to='/'>{this.props.artist.username}</Link>
+                <Link className="album-artist-link" to={`/users/${this.props.artist.id}`}>{this.props.artist.username}</Link>
             </div>
         )
     }

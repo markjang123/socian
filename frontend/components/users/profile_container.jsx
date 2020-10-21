@@ -2,9 +2,11 @@ import {connect} from 'react-redux'
 import Profile from './profile'
 import {requestUser} from '../../actions/user_actions'
 
-const mapStateToProps = state => {
+const mapStateToProps = (state,ownProps) => {
+    debugger
     return {
-        currentUserId: state.session.currentUserId
+        currentUserId: state.session.currentUserId,
+        userPageId: ownProps.match.params.userId
     }
 }
 
