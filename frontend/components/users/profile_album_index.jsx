@@ -7,9 +7,7 @@ class ProfileAlbumIndex extends React.Component {
         super(props)
         this.state = {pageUser: getState().entities.users[this.props.match.params.userId]}
     }
-    componentDidMount(){
-        dispatch(requestAlbums())
-    }
+    
     render(){
         debugger
         const stateAlbums = getState().entities.albums
