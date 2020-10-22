@@ -1,9 +1,9 @@
 import {connect} from 'react-redux'
 import Profile from './profile'
 import {requestUser} from '../../actions/user_actions'
+import {requestUserAlbums} from '../../actions/albums_actions'
 
 const mapStateToProps = (state,ownProps) => {
-    debugger
     return {
         currentUserId: state.session.currentUserId,
         userPageId: ownProps.match.params.userId
@@ -12,7 +12,8 @@ const mapStateToProps = (state,ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        requestUser: userId => dispatch(requestUser(userId))
+        requestUser: userId => dispatch(requestUser(userId)),
+        requestUserAlbums: (userId) => dispatch(requestUserAlbums(userId))
     }
 }
 

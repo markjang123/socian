@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom'
 class ProfileLinks extends React.Component {
     render(){
         return (<ul className="profile-links">
-                    <li className="profile-link"><a href="#">Facebook</a></li>
-                    <li className="profile-link"><a href="#">SoundCloud</a></li>
-                    <li className="profile-link"><a href="#">Twitter</a></li>
-                    <li className="profile-link"><a href="#">Tumblr</a></li>
-                    <li className="profile-link"><a href="#">YouTube</a></li>
+                    <li className="profile-link"><a href="http://www.facebook.com/kerokerobonito">Facebook</a></li>
+                    <li className="profile-link"><a href="http://www.soundcloud.com/kerokerobonito">SoundCloud</a></li>
+                    <li className="profile-link"><a href="http://www.twitter.com/KeroKeroBonito">Twitter</a></li>
+                    <li className="profile-link"><a href="http://www.kerokerobonito.tumblr.com/">Tumblr</a></li>
+                    <li className="profile-link"><a href="http://www.youtube.com/user/KeroKeroBonito">YouTube</a></li>
                 </ul>)
     }
 }

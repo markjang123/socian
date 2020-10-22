@@ -1,6 +1,10 @@
 class Api::AlbumsController < ApplicationController
     def index 
-        @albums = Album.all
+        if params.has_key?(:user_id)
+            @albums = Album.where(artist_id: params[:user_id])
+        else
+            @albums = Album.all
+        end
         render :index
     end
     def show

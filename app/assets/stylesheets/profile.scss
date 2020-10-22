@@ -71,7 +71,19 @@
                 font-size: 12px;
                 margin: 5px 0 5px;
             }
-
+        }
+        .follow-button {
+            width: 100%;
+            background-color: rgba(255,255,255,.5);
+            border-radius: 3px;
+            padding: 6px 5px 5px;
+            font-size: 12px;
+            font-weight: bold;
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            margin: 0;
+            color: blue;
+            cursor: pointer;
         }
     }
     .artist-description {
@@ -86,10 +98,62 @@
         .profile-link {
             margin: 10px 0 10px;
             text-align: left;
-            color: blue;
+            // color: blue;
             text-decoration: none;
+
         }
     }
 }
+.profile-tab-content {
+    display: inline-block;
+    border: 1px solid;
+    height: 100%;
+    width: 811px;
+    margin: 1px;
+    position: absolute;
+    height: 100vh;
+}
 
 
+.album-index {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 1000px;
+    width: 800px;
+    margin: auto;
+    overflow-y: auto;
+    .album-index-item {
+        display: flex;
+        flex-direction: column;
+        width: 172px;
+        height: 208px;
+        margin: 8px;
+        align-items: center;
+        .album-art {
+            display: inline-block;
+            height: 172px;
+            width: 172px;
+        }
+        .album-art-container {
+            height: 172px;
+            width: 172px;
+        }
+    }
+}
+                    .album-title-link {
+                        font-family: Arial, Helvetica, sans-serif;;
+                        font-weight: bold;
+                        font-size: 12px;
+                        margin: 5px;
+                        text-decoration: none;
+                        
+                    }
+                    .album-title-link:hover {
+                        text-decoration: underline;
+                    }
+                    .album-artist-link {
+                        font-family: Arial, Helvetica, sans-serif;;
+                        font-size: 12px;
+                        text-decoration: none;
+                    }

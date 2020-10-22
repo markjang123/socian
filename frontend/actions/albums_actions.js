@@ -16,3 +16,11 @@ export const requestAlbums = () => {
             })
     }
 }
+export const requestUserAlbums = (userId) => {
+    return dispatch => {
+        return AlbumsApiUtil.fetchUserAlbums(userId)
+            .then(response => {
+                dispatch(receiveAlbums(response))
+            })
+    }
+}

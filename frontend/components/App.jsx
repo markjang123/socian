@@ -20,7 +20,7 @@ const App = () => {
                 <Route exact path="/" component={Splash} />
                 <Route component={Error404} />
             </Switch>
-                <Route path="/users/:userId/albums" component={AlbumIndexContainer} />
+                {/* <Route path="/users/:userId/albums" component={ProfileContainer} /> */}
         </div>
     )
 }

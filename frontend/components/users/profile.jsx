@@ -11,7 +11,11 @@ class Profile extends React.Component {
             })
         this.state = {}
     }
-  
+    componentDidMount(){
+        debugger
+        this.props.requestUserAlbums(this.props.userPageId)
+            .then(response => console.log(response))
+    }
     renderIfStateIsDefined(){
         if (!!this.state.pageUser){
         return (<div className="profile-container">

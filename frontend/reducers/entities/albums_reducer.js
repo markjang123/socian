@@ -1,7 +1,7 @@
 import {RECEIVE_ALL_ALBUMS} from '../../actions/albums_actions' 
 const AlbumsReducer = (oldState = [], action) => {
     Object.freeze(oldState)
-    let nextState = Object.assign({}, oldState)
+    let nextState = {}
     switch(action.type){
     case RECEIVE_ALL_ALBUMS:
         debugger
