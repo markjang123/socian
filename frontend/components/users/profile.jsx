@@ -15,7 +15,7 @@ class Profile extends React.Component {
     renderIfStateIsDefined(){
         if (!!this.state.pageUser){
         return (<div className="profile-container">
-                <ProfileBody />
+                <ProfileBody pageUser={this.state.pageUser}/>
 
         </div>)
         } else {
