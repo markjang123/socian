@@ -18,6 +18,8 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :author_id,
         class_name: :Post
+    has_one_attached :profile_image
+    has_one_attached :banner_image
         
     def self.find_by_credentials(username_or_email, password)
         @user = User.find_by(username: username_or_email) || User.find_by(email: username_or_email)

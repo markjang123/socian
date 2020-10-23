@@ -5,9 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(username: "demoUser", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "demo@user.com", user_type: "fan")
-kkb = User.create(username: "Kero Kero Bonito", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "kero@bonito.com", user_type: "artist")
-bh = User.create(username: "Beach House", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "beach@house.com", user_type: "artist")
+demo = User.create(username: "demoUser", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "demo@user.com", user_type: "fan")
+demo_profile = open("https://socian-seed.s3-us-west-1.amazonaws.com/kero_kero_bonito_profile.jpg")
+demo.profile_image.attach(io: demo_profile, filename: "demo_profile")
+demo_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/kero_kero_bonito_banner.png")
+demo.banner_image.attach(io: demo_banner, filename: "demo_banner")
+kkb = User.create(username: "Kero Kero Bonito", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "kero@bonito.com", user_type: "artist", location: "London, UK", description: "KKB = Sarah + Gus + Jamie")
+kkb_profile = open("https://socian-seed.s3-us-west-1.amazonaws.com/kero_kero_bonito_profile.jpg")
+kkb.profile_image.attach(io: kkb_profile, filename: "kero_kero_bonito_profile")
+kkb_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/kero_kero_bonito_banner.png")
+kkb.banner_image.attach(io: kkb_banner, filename: "kero_kero_bonito_banner")
+bh = User.create(username: "Beach House", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "beach@house.com", user_type: "artist", location: "Baltimore, Maryland", description: "beachhousebaltimore.com")
+bh_profile = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_profile.jpg")
+bh.profile_image.attach(io: bh_profile, filename: "beach_house_profile") 
+bh_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_banner.png")
+bh.banner_image.attach(io: bh_banner, filename: "beach_house_banner")
+ff = User.create(username: "Fleet Foxes", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "fleet@foxes.com", user_type: "artist", location: "Seattle, Washington", description: "")
+ff_profile = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_profile.jpg")
+ff.profile_image.attach(io: ff_profile, filename: "fleet_foxes_profile") 
+ff_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_banner.png")
+ff.banner_image.attach(io: ff_banner, filename: "fleet_foxes_banner")
+
+
 bloom = Album.create(artist_id: bh.id, title: "Bloom", release_date: Date.new(2012, 5, 15))
 bloom_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/bloom.jpg")
 bloom.cover.attach(io: bloom_cover, filename: "bloom.jpg")
@@ -57,6 +76,16 @@ time_n_place = Album.create(artist_id: kkb.id, title: "Time \'n\' Place", releas
 Track.create(album_id: time_n_place.id, title: "Outside", length: "1:51")
 time_n_place_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/time_'n'_place.jpg")
 time_n_place.cover.attach(io: time_n_place_cover, filename: "time_n_place.jpg")
+totep = Album.create(artist_id: kkb.id, title: "TOTEP", release_date: Date.new(2018, 2, 20))
+totep_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/TOTEP.jpg")
+totep.cover.attach(io: totep_cover, filename: "totep.jpg")
+intro_bonito = Album.create(artist_id: kkb.id, title: "Intro Bonito", release_date: Date.new(2013, 9, 30))
+intro_bonito_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/intro_bonito.jpg")
+intro_bonito.cover.attach(io: intro_bonito_cover, filename: "intro_bonito.jpg")
+civilisation_I = Album.create(artist_id: kkb.id, title: "Civilisation I", release_date: Date.new(2019, 9, 30))
+civilisation_I_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/Civilisation_I.jpg")
+civilisation_I.cover.attach(io: civilisation_I_cover, filename: "civilisation_I.jpg")
+
 
 
 

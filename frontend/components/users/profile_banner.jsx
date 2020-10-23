@@ -7,7 +7,7 @@ class ProfileBanner extends React.Component {
     render(){
         return (
         <Link to={`/users/${this.props.pageUser.id}`}>
-            <img className="profile-banner" src={this.props.bannerUrl} />
+            <img className="profile-banner" src={this.props.pageUser.banner_image_url} />
         </Link>
         )
     }

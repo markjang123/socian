@@ -6,7 +6,7 @@ import ProfileTabContent from './profile_tab_content'
 class ProfileBody extends React.Component {
     render(){
         return (<div className="profile-body">
-                    <ProfileBanner pageUser={this.props.pageUser} bannerUrl="https://f4.bcbits.com/img/0014522299_100.png"/>
+                    <ProfileBanner pageUser={this.props.pageUser} />
                     <ProfileTabIndex pageUser={this.props.pageUser}/>
                     <ProfileColumn pageUser={this.props.pageUser} />
                     <ProfileTabContent pageUser={this.props.pageUser}/>
