@@ -27,6 +27,16 @@ ff_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_ban
 ff.banner_image.attach(io: ff_banner, filename: "fleet_foxes_banner")
 
 
+shore = Album.create(artist_id: ff.id, title: "Shore", release_date: Date.new(2020, 9, 25))
+shore_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/shore.jpg")
+shore.cover.attach(io: shore_cover, filename: "shore")
+crack_up = Album.create(artist_id: ff.id, title: "Crack-Up", release_date: Date.new(2017, 6, 16))
+crack_up_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/crack_up.jpg")
+crack_up.cover.attach(io: crack_up_cover, filename: "crack_up")
+helplessness_blues = Album.create(artist_id: ff.id, title: "Helplessness Blues", release_date: Date.new(2011, 4, 29))
+helplessness_blues_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/helplessness_blues.jpg")
+helplessness_blues.cover.attach(io: helplessness_blues_cover, filename: "helplessness_blues")
+
 bloom = Album.create(artist_id: bh.id, title: "Bloom", release_date: Date.new(2012, 5, 15))
 bloom_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/bloom.jpg")
 bloom.cover.attach(io: bloom_cover, filename: "bloom.jpg")
