@@ -1,9 +1,12 @@
 .splash-header {
     height: 500px;
-    width: 100%;
+    width: 1920px;
     font-size: x-large;
     background-color: rgb(34,34,34);
-    margin: 20px 0px 92px 0px;
+    margin-top: 20px;
+    margin-bottom: 92px;
+    margin-left: auto;
+    margin-right: auto;
     .header-content {
         display: flex;
         // flex-direction: row-reverse;
