@@ -3,7 +3,6 @@ import ProfileBody from './profile_body'
 class Profile extends React.Component {
     constructor(props){
         super(props)
-        debugger
         props.requestUser(props.userPageId)
             .then(response => {
                 let appState = getState()
@@ -12,9 +11,7 @@ class Profile extends React.Component {
         this.state = {}
     }
     componentDidMount(){
-        debugger
         this.props.requestUserAlbums(this.props.userPageId)
-            .then(response => console.log(response))
     }
     renderIfStateIsDefined(){
         if (!!this.state.pageUser){

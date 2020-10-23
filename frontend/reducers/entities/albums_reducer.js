@@ -4,7 +4,6 @@ const AlbumsReducer = (oldState = [], action) => {
     let nextState = {}
     switch(action.type){
     case RECEIVE_ALL_ALBUMS:
-        debugger
             for(const album of action.albums){
                 nextState[album.id] = album
             }
