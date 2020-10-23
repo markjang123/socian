@@ -1,4 +1,7 @@
 # README
+
+[socian live](https://socian.herokuapp.com/)
+
 Socian is a clone of bandcamp, a site where fans can explore their favorite music artists and directly support them. It utilizes the following technologies:
 # Frontend:
   * React
