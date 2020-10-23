@@ -9,12 +9,12 @@ class ProfileTabContent extends React.Component {
     }
     renderTabComponent(){
         const {pathname} = this.props.location
-        if (pathname.includes("albums")){
-            return <ProfileAlbumIndex />
+        if (pathname.includes("posts")){
+            return <ProfilePostIndex />
         } else if (pathname.includes("products")){
             return <ProfileProductIndex />
         } else {
-            return <ProfilePostIndex />
+            return <ProfileAlbumIndex />
         }
     }
     render(){
