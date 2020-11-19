@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-
+import Search from './search'
 const Navbar = (props) => {
     const {currentUser, logout} = props
     const {pathname} = props.location
@@ -31,7 +31,7 @@ const Navbar = (props) => {
                     <Link className="navbar-home-link" to="/">
                         <img id="logo-link" src={window.image} />
                     </Link>
-                    {isSessionForm() ? null: <input type="text" className="searchbar" placeholder="  Search and discover music"/>}
+                    {isSessionForm() ? null : <Search />}
                     {isSessionForm() ? null : renderLinks()}
                 </nav>
             </div>

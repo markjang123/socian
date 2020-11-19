@@ -45,23 +45,6 @@
 .grayed {
     background-color:#DDDDDD;
 }
-.searchbar {
-    position: relative;
-    top: 15%;
-    border: 1px solid #f3f3f3;
-    height: 36px;
-    width: 297px;
-    background-color: #f3f3f3;
-    border-radius: 3px;
-    color: rgba(51,51,51,70);
-    line-height: 16px;
-    right: 215px;
-}
-
-.searchbar:focus {
-    box-shadow: 0 0 5px #d7d7d7;
-    border: none;
-}
 
 body {
     margin: 0;

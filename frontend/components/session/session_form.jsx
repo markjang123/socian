@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(user){
+        debugger
         return e => {
             e.preventDefault()
             this.props.submitAction(user)
