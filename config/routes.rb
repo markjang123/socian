@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     end
     resources :albums, only: [:index, :show]
     resource :session, only: [:create, :destroy]
+    get 'search', to: 'search#index'
   end
 end

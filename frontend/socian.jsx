@@ -5,6 +5,8 @@ import configureStore from './store/store'
 import {requestUser} from './actions/user_actions'
 import {login} from './actions/session_actions'
 import {requestAlbums} from './actions/albums_actions'
+import {requestAllSearches} from './actions/search_actions'
+
 
 
 document.addEventListener("DOMContentLoaded",() => {
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded",() => {
     window.getState = store.getState;
     window.requestUser = requestUser
     window.requestAlbums = requestAlbums
+    window.requestAllSearches = requestAllSearches
     window.login = login
     ReactDOM.render(<Root store={store} />, root)
 })

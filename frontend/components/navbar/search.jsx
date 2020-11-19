@@ -3,7 +3,7 @@ import SearchResultItem from './search_result_item'
 class Search extends React.Component {
     constructor(props){
         super(props)
-        this.state = {results: [1], query: ""}
+        this.state = {results: [], query: ""}
         this.update = this.update.bind(this)
     }
     update(ele){
@@ -14,8 +14,8 @@ class Search extends React.Component {
             this.setState({results: newResults, query: e.target.value})
         }
     }
+
     render(){
-        let testArr = [1, 2]
         return (
             <div className="search-container">
                 <input onChange={this.update(1)} type="text" className="searchbar" placeholder="  Search and discover music"/>
