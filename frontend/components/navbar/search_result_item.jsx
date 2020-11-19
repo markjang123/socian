@@ -3,7 +3,7 @@ class SearchResultItem extends React.Component {
     render(){
         return (
             <div className="search-result-item">
-                ITEM
+                {this.props.result.title || this.props.result.username} 
             </div>
         )
     }
