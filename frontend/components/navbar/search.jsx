@@ -6,6 +6,7 @@ class Search extends React.Component {
         this.state = {results: [], query: ""}
         this.update = this.update.bind(this)
         this.filterSearches = this.filterSearches.bind(this)
+        this.clearText = this.clearText.bind(this)
         debugger
     }
     
@@ -24,17 +25,23 @@ class Search extends React.Component {
     filterSearches(query){
         debugger
         if (!query) return []
-        return this.props.allSearches.filter(obj => {
+        let regex = new RegExp(query, 'i')
+        let filtered = this.props.allSearches.filter(obj => {
             let test
             obj.hasOwnProperty("username") ? test = obj.username : test = obj.title
-            return test.includes(query)
+            return regex.test(test)
         })
+        return filtered.slice(0, 5)
+    }
+    clearText(e){
+        e.currentTarget.value = ""
+        this.setState({results: []})
     }
     render(){
         debugger
         return (
             <div className="search-container">
-                <input onChange={this.update("results")}  type="text" className="searchbar" placeholder="  Search and discover music"/>
+                <input onBlur={this.clearText} onChange={this.update("results")}  type="text" className="searchbar" placeholder="  Search and discover music"/>
                 <ul className="search-results">
                     {this.state.results.map((result, idx) => <SearchResultItem key={idx} result={result} />)}
                 </ul>
