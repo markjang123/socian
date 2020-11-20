@@ -4,16 +4,21 @@ class AlbumShow extends React.Component {
         super(props)
     }
     render(){
-        return (<h3>ALBUM SHOW</h3>
-            // <div className="album-show"> 
-            //     <div className="album-cover-container">
-            //         <img src="" />
-            //     </div>
-            //     <ul className="track-list">
+        debugger
+        const {title, artist, photoUrl} = this.props.location.state.album
+        return (
+        <div className="album-show"> 
+        <h3>{title}</h3>
+        <h3>{artist.username}</h3>
+                <div className="album-cover-container">
+                    <img classname="album-cover" src={photoUrl} />
+                </div>
+                <ul className="track-list">
 
-            //     </ul>
-            // </div>
+                </ul>
+            </div>
         )
+        
     }
 }
 

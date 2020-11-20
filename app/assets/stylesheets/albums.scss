@@ -27,20 +27,25 @@
         }
     }
 }
-                    .album-title-link {
-                        font-family: Arial, Helvetica, sans-serif;;
-                        font-weight: bold;
-                        font-size: 12px;
-                        margin: 5px;
-                        text-decoration: none;
-                        
-                    }
-                    .album-title-link:hover {
-                        text-decoration: underline;
-                    }
-                    .album-artist-link {
-                        font-family: Arial, Helvetica, sans-serif;;
-                        font-size: 12px;
-                        text-decoration: none;
-                    }
+.album-title-link {
+    font-family: Arial, Helvetica, sans-serif;;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 5px;
+    text-decoration: none;
+    
+}
+.album-title-link:hover {
+    text-decoration: underline;
+}
+.album-artist-link {
+    font-family: Arial, Helvetica, sans-serif;;
+    font-size: 12px;
+    text-decoration: none;
+}
+.album-cover {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
     

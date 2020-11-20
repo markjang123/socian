@@ -40,8 +40,8 @@ class Search extends React.Component {
     render(){
         debugger
         return (
-            <div className="search-container">
-                <input onBlur={this.clearText} onChange={this.update("results")}  type="text" className="searchbar" placeholder="  Search and discover music"/>
+            <div className="search-container" onBlur={this.clearText}>
+                <input  onChange={this.update("results")}  type="text" className="searchbar" placeholder="  Search and discover music"/>
                 <ul className="search-results">
                     {this.state.results.map((result, idx) => <SearchResultItem key={idx} result={result} />)}
                 </ul>

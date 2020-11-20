@@ -6,18 +6,22 @@ import ProfileProductIndex from './profile_product_index'
 class ProfileTabContent extends React.Component {
     constructor(props) {
         super(props)
+        // this.state = {body: this.props.body}
     }
     renderTabComponent(){
-        const {pathname} = this.props.location
-        if (pathname.includes("posts")){
-            return <ProfilePostIndex />
-        } else if (pathname.includes("products")){
-            return <ProfileProductIndex />
-        } else {
-            return <ProfileAlbumIndex />
+        switch(this.props.body){
+            case "posts":
+                return <ProfilePostIndex />
+            case "products":
+                return <ProfileProductIndex />
+            case "albums":
+                return <ProfileAlbumIndex />
+            default: 
+                return <ProfileAlbumIndex />
         }
     }
     render(){
+        debugger
         return (<div className="profile-tab-content">
                    {this.renderTabComponent()}
                 </div>)

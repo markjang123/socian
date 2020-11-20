@@ -5,13 +5,24 @@ class AlbumIndexItem extends React.Component {
         super(props)
     }
     render(){
+        debugger
         return (
             <div className="album-index-item">
-                <div className="album-art-container">
-                    <img className="album-art" src={this.props.cover} />
-                </div>
-                <Link className="album-title-link" to='/users/4/albums/4'>{this.props.title}</Link>
-                {this.props.artist && <Link className="album-artist-link" to={`/users/${this.props.artist.id}`}>{this.props.artist.username}</Link>}
+                <Link className="album-title-link" to={{
+                    pathname:`/users/${this.props.album.artist.id}/albums/${this.props.album.id}`,
+                    state: {album: this.props.album},
+                 }}>
+                    <div className="album-art-container">
+                        <img className="album-art" src={this.props.album.photoUrl} />
+                    </div>
+                </Link>
+                <Link className="album-title-link" to={{
+                    pathname:`/users/${this.props.album.artist.id}/albums/${this.props.album.id}`,
+                    state: {album: this.props.album},
+                 }}>
+                    {this.props.album.title}
+                </Link>
+                {this.props.album.artist && <Link className="album-artist-link" to={`/users/${this.props.album.artist.id}`}>{this.props.album.artist.username}</Link>}
             </div>
         )
     }

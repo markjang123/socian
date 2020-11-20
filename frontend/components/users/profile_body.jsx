@@ -4,12 +4,18 @@ import ProfileTabIndex from './profile_tab_index'
 import ProfileColumn from './profile_column'
 import ProfileTabContent from './profile_tab_content'
 class ProfileBody extends React.Component {
+    constructor(props){
+        debugger
+        super(props)
+        // this.state = {body: this.props.body}
+    }
     render(){
+        debugger
         return (<div className="profile-body">
                     <ProfileBanner pageUser={this.props.pageUser} />
-                    <ProfileTabIndex pageUser={this.props.pageUser}/>
+                    <ProfileTabIndex body={this.props.body} pageUser={this.props.pageUser}/>
                     <ProfileColumn pageUser={this.props.pageUser} />
-                    <ProfileTabContent pageUser={this.props.pageUser}/>
+                    <ProfileTabContent body={this.props.body} pageUser={this.props.pageUser}/>
                    
                 </div>)
     }

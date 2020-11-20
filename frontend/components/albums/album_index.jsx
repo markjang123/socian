@@ -14,7 +14,7 @@ class AlbumIndex extends React.Component {
     render() {
         return (
         <ul className="album-index">
-            {this.props.albums ? this.props.albums.map((album, idx) => <AlbumIndexItem artist={album.artist} cover={album.photoUrl} title={album.title} key={idx} />) : null}
+            {this.props.albums ? this.props.albums.map((album, idx) => <AlbumIndexItem album={album} key={idx} />) : null}
         </ul>
         )
     }

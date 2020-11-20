@@ -15,7 +15,7 @@ class ProfileAlbumIndex extends React.Component {
                 {this.state.pageUser.albums.map(
                     (albumItem, idx) => {
                     let album = stateAlbums[albumItem.id]
-                    return <AlbumIndexItem cover={album.photoUrl} title={album.title} key={idx} />
+                    return <AlbumIndexItem album={album} key={idx} />
                     }
                     )}
             </ul>
