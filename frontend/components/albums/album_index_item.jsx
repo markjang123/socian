@@ -10,7 +10,7 @@ class AlbumIndexItem extends React.Component {
             <div className="album-index-item">
                 <Link className="album-title-link" to={{
                     pathname:`/users/${this.props.album.artist.id}/albums/${this.props.album.id}`,
-                    state: {album: this.props.album},
+                    state: {album: this.props.album, body: "albumShow"},
                  }}>
                     <div className="album-art-container">
                         <img className="album-art" src={this.props.album.photoUrl} />

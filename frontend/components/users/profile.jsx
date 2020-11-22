@@ -28,7 +28,7 @@ class Profile extends React.Component {
         debugger
         if (!!this.state.pageUser){
         return (<div className="profile-container">
-                <ProfileBody body={this.props.body} pageUser={this.state.pageUser}/>
+                <ProfileBody album={this.props.album} body={this.props.body} pageUser={this.state.pageUser}/>
         </div>)
         } else {
             return null

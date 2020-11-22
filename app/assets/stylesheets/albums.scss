@@ -39,13 +39,36 @@
     text-decoration: underline;
 }
 .album-artist-link {
-    font-family: Arial, Helvetica, sans-serif;;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     text-decoration: none;
 }
-.album-cover {
-    height: 100px;
-    width: 100px;
-    display: inline-block;
+.album-show {
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    .left-column {
+        display: inline-block;
+        width: 350px;
+        height: 100vh;
+        .album-title {
+            font: normal 28px/1em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #4D3D48;
+            margin: 8px 30px 8px 0px;
+        }
+        .album-artist {
+            font: normal 14px/1em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #4D3D48;
+        }
+    }
+    .middle-column {
+        display: inline-block;
+        width: 350px;
+        height: 100vh;
+        overflow: hidden;
+        .album-cover {
+            height: 350px;
+        }
+    }
 }
     
