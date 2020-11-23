@@ -1,8 +1,16 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import TrackPlayer from '../tracks/track_player'
+import TracksIndex from '../tracks/tracks_index'
+import {setCurrentTrack, setPlayStatus} from '../../actions/current_track_actions'
 class AlbumShow extends React.Component {
     constructor(props) {
         super(props)
+    }
+    componentDidMount(){
+        debugger
+        dispatch(setCurrentTrack(this.props.album.tracks[0]))
+        dispatch(setPlayStatus(false))
     }
     render(){
         debugger
@@ -13,9 +21,7 @@ class AlbumShow extends React.Component {
                 <h3 className="album-title">{title}</h3>
                 <h3 className="album-artist">by {artist.username}</h3>
                 <TrackPlayer />
-                <ol className="track-list">
-                    {tracks.map(track => <li>{track.title}</li>)}
-                </ol>
+                <TracksIndex tracks={tracks}/>
             </div>
             <div className="middle-column">
                 <img className="album-cover" src={photoUrl} />
@@ -26,5 +32,4 @@ class AlbumShow extends React.Component {
         
     }
 }
-{/* <iframe style="border: 0; width: 350px; height: 786px;" src="https://bandcamp.com/EmbeddedPlayer/album=3456317936/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless><a href="https://kerokerobonito.bandcamp.com/album/bonito-generation">Bonito Generation by Kero Kero Bonito</a></iframe> */}
 export default AlbumShow

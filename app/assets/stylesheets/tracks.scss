@@ -1,4 +1,94 @@
 .track-player {
     height: 52px;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+}
+.big-play-button {
+    display: inline-block;
+    height: 52px;
+    width: 52px;
+    background-color: white;
+    border: 1px solid lightgray;
+    .big-play-button-icon {
+        display: inline-block;
+        height: 52px;
+        width: 52px;
+    }
+}
+.track-list {
+    font-size: 12px;
+    margin-top: 50px;
+}
+.tracks-index-item-container {
+    margin: 0;
+    height: 2em;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    // padding-top: auto;
+    // padding-bottom: auto;
+    // justify-content: space-between;
+    .play-button {
+        height: 19px;
+        width: 19px;
+        display: inline-block;
+        position: relative;
+        .play-button-icon {
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+            margin: auto;
+            position: absolute;
+            border: 1px solid lightgray;
+        }
+    }
+    .track-length{
+        color: gray;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .track-title{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .track-title-li{
+        margin-left: 30px;
+        margin-right: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    li::marker {
+        margin-left: 30px;
+    }
+}
+.track-interface {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
+}
+.track-info {
+    display: flex;
+    font-size: 12px;
+}
+.current-track-info {
+    margin-right: 8px;
+}
+.current-track-time {
+    color: #B77DC5;
+}
+#slider {
+    -webkit-appearance: none;
+    display: inline-block;
+    width: 249px;
+    height: 8px;
+    background-color: #f6f6f6;
+    border: 1px solid lightgray;
+    outline: none;
+}
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 12px;
+    background-color: white;
+    border: 1px solid lightgray;
 }

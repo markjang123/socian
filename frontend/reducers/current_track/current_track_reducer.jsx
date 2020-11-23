@@ -5,10 +5,11 @@ const CurrentTrackReducer = (oldState = {track: {}, isPlaying: false}, action) =
     let nextState = Object.assign({}, oldState)
     switch(action.type){
         case RECEIVE_CURRENT_TRACK:
-            nextState[track] = action.currentTrack
+            debugger
+            nextState["track"] = action.currentTrack
             return nextState
         case RECEIVE_PLAY_STATUS:
-            nextState[isPlaying] = action.isPlaying
+            nextState["isPlaying"] = action.isPlaying
             return nextState
         default: 
             return oldState

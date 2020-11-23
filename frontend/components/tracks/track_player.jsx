@@ -1,24 +1,91 @@
 import React from 'react'
+import {setCurrentTrack, setPlayStatus} from '../../actions/current_track_actions'
 import {connect} from 'react-redux'
 class TrackPlayer extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {currentTrack: this.props.currentTrack.track}
+        this.state = {
+            isPlaying: this.props.isPlaying,
+            audio: new Audio(this.props.currentTrack.audio_source), 
+            currentTime: "0:00"
+        }
+        this.togglePlay = this.togglePlay.bind(this)
+        this.getCurrentTime = this.getCurrentTime.bind(this)
+        this.audio = React.createRef()
+    }
+    componentDidUpdate(){
+        debugger
+        // this.audio = new Audio(this.props.currentTrack.audio_source)
+        if (!this.props.isPlaying){
+            this.audio.current.pause()
+        } else {
+            this.audio.current.play()
+        }
+    }
+    togglePlay(){
+       this.props.setPlayStatus(!this.props.isPlaying)
+    }
+    renderIcon(){
+        if (this.props.isPlaying){
+            return <img className="big-play-button-icon" src="http://simpleicon.com/wp-content/uploads/pause.png" />
+        } else {
+            return <img className="big-play-button-icon" src="http://simpleicon.com/wp-content/uploads/play1.png" />
+        }
+    }
+    getCurrentTime(){
+        debugger
+        return this.audio.current === null ? "" : this.audio.current.currentTime
+    }
+    renderAudio(){
+        return new Audio(this.props.currentTrack.audio_source || "")
+    }
+    updateTime(){
+        debugger
+        setInterval(console.log(this.getCurrentTime()), 1000)
+    }
+    componentDidMount(){
+        debugger
+        // this.updateTime()
+        setInterval(() => {
+            console.log(Math.ceil(this.getCurrentTime()))
+            this.setState({["currentTime"]: this.formatTime(Math.ceil(this.getCurrentTime()))})
+        }, 1000)
+    }
+    formatTime(seconds){
+        let secDisplay
+        seconds % 60 < 10 ? secDisplay = `0${seconds % 60}` : secDisplay = `${seconds % 60}`
+        
+        return `${Math.floor(seconds / 60)}:` + secDisplay
     }
     render(){
+        debugger
        return <div className="track-player">
-           <h3>{this.state.currentTrack.title}</h3>
-           <audio controls src="https://t4.bcbits.com/stream/911239cb6daca8f3054f46be7a8fd32a/mp3-128/3541840780?p=0&ts=1605962539&t=14c4a4c4a9f80816a48812b500e4faf9f36c5a27&token=1605962539_21ff665dd9c237f4eddfe9cc6a3502e06c8eee53">
-
-           </audio>
+           <audio ref={this.audio} src={this.props.currentTrack.audio_source} />
+           <div onClick={this.togglePlay} className="big-play-button">{this.renderIcon()}</div>
+           <div className="track-interface">
+                <div className="track-info">
+                        <p className="current-track-info">{this.props.currentTrack.title}</p>
+                        <p className="current-track-info current-track-time"> {this.state.currentTime} / {this.props.currentTrack.length}</p>
+                </div>
+                <input onMouseUp={(e) => alert(e.currentTarget.value)} id="slider" type="range" min="1" max="100" />
+           </div>
        </div>
         
     }
 }
     const mapStateToProps = state => {
+        debugger
         return {
-            currentTrack: state.currentTrack
+            currentTrack: state.currentTrack.track,
+            isPlaying: state.currentTrack.isPlaying
+        }
+    }
+    const mapDispatchToProps = dispatch => {
+        debugger
+        return {
+            setCurrentTrack: track => dispatch(setCurrentTrack(track)),
+            setPlayStatus: isPlaying => dispatch(setPlayStatus(isPlaying))
         }
     }
 
-export default connect(mapStateToProps)(TrackPlayer)
+export default connect(mapStateToProps, mapDispatchToProps)(TrackPlayer)
