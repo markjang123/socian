@@ -21,15 +21,7 @@ const App = () => {
                 <Route exact path="/users/:userId/posts" render={props => <ProfileContainer {...props} body={"posts"} />}/>
                 <Route exact path="/users/:userId/products" render={props => <ProfileContainer {...props} body={"products"} />}/>
                 <Route exact path="/users/:userId/albums" render={props => <ProfileContainer {...props} body={"albums"} />}/>
-                <Route exact path="/users/:userId/albums/:albumId" render={props => {
-                    debugger
-                    let state = getState()
-                    let albumId = props.match.params.albumId
-                    let album = state.search.find(obj => {
-                        obj.id === albumId && obj.artist
-                    })
-                    return <ProfileContainer {...props} body="albumShow" album={props.location.state ? props.location.state.album : album} />}}
-                />
+                <Route exact path="/users/:userId/albums/:albumId" render={props =>  <ProfileContainer {...props} body="albumShow" />}   />
                 {/* <Route path="/users/:userId/albums/:albumId" component={AlbumShow} /> */}
                 <Route exact path="/" component={Splash} />
                 <Route component={Error404} />

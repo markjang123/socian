@@ -42,7 +42,7 @@ class Profile extends React.Component {
         return (<div className="profile-container">
                 <ProfileBody 
                 // album={this.props.album} 
-                body={this.props.body || "albums"} pageUser={this.props.pageUser}/>
+                body={this.props.body || "albums"} pageUser={this.props.pageUser} albums={this.props.albums}/>
         </div>)
         } else {
             return null

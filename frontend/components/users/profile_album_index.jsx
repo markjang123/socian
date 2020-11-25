@@ -9,12 +9,12 @@ class ProfileAlbumIndex extends React.Component {
     }
     
     render(){
+        debugger
         const stateAlbums = getState().entities.albums
         return (
             <ul className="profile-album-index">
-                {this.state.pageUser.albums.map(
-                    (albumItem, idx) => {
-                    let album = stateAlbums[albumItem.id]
+                {this.props.albums.map(
+                    (album, idx) => {
                     return <AlbumIndexItem album={album} key={idx} />
                     }
                     )}

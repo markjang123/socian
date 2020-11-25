@@ -12,18 +12,15 @@ class Search extends React.Component {
     
     update(field){
         return e => {
-            debugger
             let newResults = this.filterSearches(e.currentTarget.value)
             debugger
             this.setState({[field]: newResults})
         }
     }
     componentDidMount(){
-        debugger
         this.props.requestAllSearches()
     }
     filterSearches(query){
-        debugger
         if (!query) return []
         let regex = new RegExp(query, 'i')
         let filtered = this.props.allSearches.filter(obj => {
@@ -40,7 +37,6 @@ class Search extends React.Component {
         }, 150)
     }
     render(){
-        debugger
         return (
             <div className="search-container" onBlur={this.clearText}>
                 <input  onChange={this.update("results")}  type="text" className="searchbar" placeholder="Search and discover music"/>

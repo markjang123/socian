@@ -7,7 +7,7 @@ class SearchResultItem extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
     handleClick(){
-        debugger
+        
         // alert("CLICKED")
         // this.props.history.push('users/2')
         // if (this.props.result.username){
@@ -15,7 +15,7 @@ class SearchResultItem extends React.Component {
         // }
     }
     render(){
-        debugger
+
         return (
             <Link to={`/users/${this.props.result.id}`}>
             <div className="search-result-item" onClick={this.handleClick}>

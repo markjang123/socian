@@ -8,7 +8,8 @@ const mapStateToProps = (state,ownProps) => {
     return {
         currentUserId: state.session.currentUserId,
         userPageId, 
-        pageUser: state.entities.users[userPageId]
+        pageUser: state.entities.users[userPageId],
+        albums: Object.values(state.entities.albums)
     }
 }
 

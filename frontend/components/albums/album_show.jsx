@@ -1,5 +1,4 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import TrackPlayer from '../tracks/track_player'
 import TracksIndex from '../tracks/tracks_index'
 import {setCurrentTrack, setPlayStatus} from '../../actions/current_track_actions'
@@ -9,11 +8,19 @@ class AlbumShow extends React.Component {
     }
     componentDidMount(){
         debugger
-        dispatch(setCurrentTrack(this.props.album.tracks[0]))
-        dispatch(setPlayStatus(false))
+        this.props.requestAlbum(this.props.albumid)
+    }
+    componentDidUpdate(){
+        if (this.props.album){
+            dispatch(setCurrentTrack(this.props.album.tracks[0]))
+            dispatch(setPlayStatus(false))
+        }
     }
     render(){
         debugger
+        if (this.props.album === undefined) {
+            return null
+        }
         const {title, artist, photoUrl, tracks} = this.props.album
         return (
         <div className="album-show"> 
