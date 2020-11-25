@@ -1,17 +1,22 @@
 import React from 'react'
 import {setCurrentTrack, setPlayStatus} from '../../actions/current_track_actions'
 import {connect} from 'react-redux'
+import ProgressBar from './progress_bar'
 class TrackPlayer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             isPlaying: this.props.isPlaying,
             audio: new Audio(this.props.currentTrack.audio_source), 
-            currentTime: "0:00"
+            currentTime: "0:00", 
+            percentDone: 0,
+            duration: 100
         }
         this.togglePlay = this.togglePlay.bind(this)
         this.getCurrentTime = this.getCurrentTime.bind(this)
         this.audio = React.createRef()
+        this.updateBar = this.updateBar.bind(this)
+        this.seekToTime = this.seekToTime.bind(this)
     }
     componentDidUpdate(){
         debugger
@@ -43,19 +48,38 @@ class TrackPlayer extends React.Component {
         debugger
         setInterval(console.log(this.getCurrentTime()), 1000)
     }
+    updateBar(e) {
+        console.log(`Bar at: ${this.state.percentDone}`)
+        this.setState({
+          ["percentDone"]: 100 * (this.audio.current.currentTime / this.audio.current.duration)
+        });
+        this.setState({
+          ["percentDone"]: e.target.value
+        });
+      }
     componentDidMount(){
         debugger
         // this.updateTime()
-        setInterval(() => {
-            console.log(Math.ceil(this.getCurrentTime()))
+       this.timeInterval = setInterval(() => {
             this.setState({["currentTime"]: this.formatTime(Math.ceil(this.getCurrentTime()))})
         }, 1000)
+        this.sliderInterval =   setInterval(() =>
+        this.setState({
+            ["percentDone"]: 100 * (this.audio.current.currentTime / this.audio.current.duration)
+          }), 500)
+    }
+    componentWillUnmount(){
+        clearInterval(this.timeInterval)
+        clearInterval(this.sliderInterval)
     }
     formatTime(seconds){
         let secDisplay
         seconds % 60 < 10 ? secDisplay = `0${seconds % 60}` : secDisplay = `${seconds % 60}`
         
         return `${Math.floor(seconds / 60)}:` + secDisplay
+    }
+    seekToTime(e){
+        this.audio.current.currentTime = this.audio.current.duration * (e.target.value / 100)
     }
     render(){
         debugger
@@ -67,7 +91,7 @@ class TrackPlayer extends React.Component {
                         <p className="current-track-info">{this.props.currentTrack.title}</p>
                         <p className="current-track-info current-track-time"> {this.state.currentTime} / {this.props.currentTrack.length}</p>
                 </div>
-                <input onMouseUp={(e) => alert(e.currentTarget.value)} id="slider" type="range" min="1" max="100" />
+                <input onMouseUp={this.seekToTime} onChange={this.updateBar} id="slider" value={this.state.percentDone} type="range" min="0" max="100" />
            </div>
        </div>
         

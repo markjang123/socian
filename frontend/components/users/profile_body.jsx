@@ -15,7 +15,10 @@ class ProfileBody extends React.Component {
                     <ProfileBanner pageUser={this.props.pageUser} />
                     <ProfileTabIndex body={this.props.body} pageUser={this.props.pageUser}/>
                     <ProfileColumn pageUser={this.props.pageUser} />
-                    <ProfileTabContent album={this.props.album} body={this.props.body} pageUser={this.props.pageUser}/>
+                    {/* <ProfileTabContent 
+                    album={this.props.album} 
+                    body={this.props.body || "albums"} 
+                    pageUser={this.props.pageUser}/> */}
                    
                 </div>)
     }

@@ -23,7 +23,12 @@ const App = () => {
                 <Route exact path="/users/:userId/albums" render={props => <ProfileContainer {...props} body={"albums"} />}/>
                 <Route exact path="/users/:userId/albums/:albumId" render={props => {
                     debugger
-                    return <ProfileContainer {...props} body={props.location.state.body} album={props.location.state.album} />}}
+                    let state = getState()
+                    let albumId = props.match.params.albumId
+                    let album = state.search.find(obj => {
+                        obj.id === albumId && obj.artist
+                    })
+                    return <ProfileContainer {...props} body="albumShow" album={props.location.state ? props.location.state.album : album} />}}
                 />
                 {/* <Route path="/users/:userId/albums/:albumId" component={AlbumShow} /> */}
                 <Route exact path="/" component={Splash} />

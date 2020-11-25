@@ -2,6 +2,7 @@
     background-color: black;
     height: 100vh;
     min-height: 100vh;
+    overflow: scroll;
 }
 .profile-body {
     background-color: white;
@@ -12,7 +13,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
-    margin-bottom: 0;;
+    margin-bottom: 0;
+    overflow: scroll;
 }
 .profile-banner {
     height: 180px;

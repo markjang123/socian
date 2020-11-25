@@ -4,9 +4,11 @@ import {requestUser} from '../../actions/user_actions'
 import {requestUserAlbums} from '../../actions/albums_actions'
 
 const mapStateToProps = (state,ownProps) => {
+    let userPageId = ownProps.match.params.userId
     return {
         currentUserId: state.session.currentUserId,
-        userPageId: ownProps.match.params.userId
+        userPageId, 
+        pageUser: state.entities.users[userPageId]
     }
 }
 

@@ -8,13 +8,16 @@ class SearchResultItem extends React.Component {
     }
     handleClick(){
         debugger
-        if (this.props.result.username){
-            this.props.history.push(`/users/${this.props.result.id}`)
-        }
+        // alert("CLICKED")
+        // this.props.history.push('users/2')
+        // if (this.props.result.username){
+        //     this.props.history.push(`/users/${this.props.result.id}`)
+        // }
     }
     render(){
         debugger
         return (
+            <Link to={`/users/${this.props.result.id}`}>
             <div className="search-result-item" onClick={this.handleClick}>
                 <div className="result-image">
                     <img onClick={this.handleClick} className="result-image" src={this.props.result.username ? "https://f4.bcbits.com/img/a3210691580_16.jpg" : this.props.result.photoUrl} />
@@ -29,6 +32,7 @@ class SearchResultItem extends React.Component {
                     </div>
                 </div>
             </div>
+            </Link>
           
         )
     }

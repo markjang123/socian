@@ -34,14 +34,16 @@ class Search extends React.Component {
         return filtered.slice(0, 5)
     }
     clearText(e){
-        e.currentTarget.value = ""
-        this.setState({results: []})
+        setTimeout(() => {
+            e.currentTarget.value = ""
+            this.setState({results: []})
+        }, 150)
     }
     render(){
         debugger
         return (
             <div className="search-container" onBlur={this.clearText}>
-                <input  onChange={this.update("results")}  type="text" className="searchbar" placeholder="  Search and discover music"/>
+                <input  onChange={this.update("results")}  type="text" className="searchbar" placeholder="Search and discover music"/>
                 <ul className="search-results">
                     {this.state.results.map((result, idx) => <SearchResultItem key={idx} result={result} />)}
                 </ul>
