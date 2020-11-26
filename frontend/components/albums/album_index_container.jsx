@@ -3,7 +3,7 @@ import AlbumIndex from './album_index'
 import {requestAlbums} from '../../actions/albums_actions'
 const mapStateToProps = state => {
     return {
-        albums: Object.values(state.entities.albums)
+        albums: Object.values(state.entities.albums.all)
     }
 }
 

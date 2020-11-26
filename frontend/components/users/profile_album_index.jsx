@@ -10,7 +10,6 @@ class ProfileAlbumIndex extends React.Component {
     
     render(){
         debugger
-        const stateAlbums = getState().entities.albums
         return (
             <ul className="profile-album-index">
                 {this.props.albums.map(

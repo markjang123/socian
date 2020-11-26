@@ -17,7 +17,10 @@ class SessionForm extends React.Component {
         return e => {
             e.preventDefault()
             this.props.submitAction(user)
-                .then((currentUserId) => this.props.history.push(`/users/${currentUserId}`))
+                .then((currentUserId) => {
+                    debugger
+                    this.props.history.push(`/users/${this.props.formType === "Log in" ? currentUserId : currentUserId.userId}`)
+                })
         }
     }
     componentDidMount(){

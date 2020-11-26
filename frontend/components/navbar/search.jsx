@@ -20,6 +20,12 @@ class Search extends React.Component {
     componentDidMount(){
         this.props.requestAllSearches()
     }
+    componentDidUpdate(prevProps){
+        debugger
+        if (this.props.location.pathname !== prevProps.location.pathname){
+            this.clearText()
+        }
+    }
     filterSearches(query){
         if (!query) return []
         let regex = new RegExp(query, 'i')
@@ -32,14 +38,14 @@ class Search extends React.Component {
     }
     clearText(e){
         setTimeout(() => {
-            e.currentTarget.value = ""
+            // e.currentTarget.value = ""
             this.setState({results: []})
         }, 150)
     }
     render(){
         return (
             <div className="search-container" onBlur={this.clearText}>
-                <input  onChange={this.update("results")}  type="text" className="searchbar" placeholder="Search and discover music"/>
+                <input onChange={this.update("results")}  type="text" className="searchbar" placeholder="Search and discover music"/>
                 <ul className="search-results">
                     {this.state.results.map((result, idx) => <SearchResultItem key={idx} result={result} />)}
                 </ul>

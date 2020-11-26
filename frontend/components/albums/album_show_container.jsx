@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     let albumId = ownProps.match.params.albumId
     return {
-        album: state.entities.albums[albumId],
+        album: state.entities.albums.user[albumId],
         albumId
     }
 }

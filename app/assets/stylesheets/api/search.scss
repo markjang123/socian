@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .search-container {
     // background-color: red;
+    text-decoration: none;
     position: relative;
     top: 15%;
     height: auto;
@@ -14,6 +15,7 @@
     flex-shrink: 0;
 }
 .search-results {
+    text-decoration: none;
     position: absolute;
     // position: relative;
     // background-color: blue;
@@ -46,6 +48,7 @@
     border: none;
 }
 .search-result-item {
+    text-decoration: none;
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: Arial, Helvetica, sans-serif;
@@ -66,16 +69,22 @@
         width: 66px;
     }
     .result-title {
+        text-decoration: none;
         font-weight: 700;
         margin: 5px;
     }
     .result-category {
+        text-decoration: none;
         margin: 5px;
     }
     .result-artist {
+        text-decoration: none;
         margin: 5px;
     }
 }
 .search-result-item:hover {
     background-color: #DDDDDD;
+}
+.search-link {
+    text-decoration: none;
 }
