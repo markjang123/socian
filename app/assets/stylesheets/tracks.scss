@@ -2,6 +2,7 @@
     height: 52px;
     // border: 1px solid black;
     display: flex;
+    
 }
 .big-play-button {
     display: inline-block;
@@ -22,6 +23,10 @@
     padding-left: 0;
 }
 .tracks-index-item-container {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1em;
+    word-wrap: break-word;
     margin: 0;
     height: 2em;
     font-size: 12px;
@@ -50,6 +55,10 @@
         margin-bottom: auto;
     }
     .track-title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1em;
+        word-wrap: break-word;
         margin-top: auto;
         margin-bottom: auto;
     }

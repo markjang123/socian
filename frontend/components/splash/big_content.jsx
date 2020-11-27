@@ -1,13 +1,16 @@
 import React from 'react'
-
+import {withRouter} from 'react-router-dom'
 class BigContent extends React.Component {
     constructor(props){
         super(props)
+        this.handleClick = this.handleClick.bind(this)
     }
-    
+    handleClick(){
+        this.props.history.push("users/2/albums/11")
+    }
     render(){
         return (
-        <div className="big-content">
+        <div className="big-content" onClick={this.handleClick}>
              <img className="big-content-image" src={this.props.imageUrl}/>
              <div className="big-content-details">
                 <div className="big-content-title">Kero Kero Bonito</div>
@@ -17,9 +20,8 @@ class BigContent extends React.Component {
                 <button className="link-button">listen now</button>
              </div>
         </div>
-
         )
     }
 }
 
-export default BigContent
+export default withRouter(BigContent)

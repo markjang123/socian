@@ -5,7 +5,6 @@ class AlbumIndexItem extends React.Component {
         super(props)
     }
     render(){
-        debugger
         return (
             <div className="album-index-item">
                 <Link className="album-title-link" to={{

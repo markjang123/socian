@@ -120,13 +120,16 @@
     left: 30px;
 }
 .profile-album-index {
+    ::-webkit-scrollbar {
+        display: none;
+    }
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow-y: auto;
+    // overflow-y: auto;
     .album-index-item {
         text-decoration: none;
         text-align: left;
@@ -134,15 +137,21 @@
         flex-direction: column;
         width: 232px;
         height: 263px;
-        margin: 0 30px 30px 0;
+        margin: 0 30px 30px 0px;
+        overflow: hidden;
         .album-art {
             display: inline-block;
             height: 232px;
             width: 232px;
+            overflow: hidden;
+            margin-bottom: 30px;
+
         }
         .album-art-container {
+            overflow:hidden;
             height: 232px;
             width: 232px;
+            position: relative;
         }
         .album-title-link {
             color: #CE05FF;

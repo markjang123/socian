@@ -9,6 +9,7 @@ const AlbumsReducer = (oldState = {all: {}, user: {}}, action) => {
             }
             return nextState
     case RECEIVE_USER_ALBUMS:
+        nextState.user = {}
         for(const album of action.albums){
             nextState.user[album.id] = album
         }
