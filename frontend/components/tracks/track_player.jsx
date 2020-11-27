@@ -20,7 +20,6 @@ class TrackPlayer extends React.Component {
     }
     componentDidUpdate(){
         debugger
-        // this.audio = new Audio(this.props.currentTrack.audio_source)
         if (!this.props.isPlaying){
             this.audio.current.pause()
         } else {
@@ -59,7 +58,7 @@ class TrackPlayer extends React.Component {
       }
     componentDidMount(){
         debugger
-        // this.updateTime()
+        this.setState({["duration"]: this.audio.current.duration})
        this.timeInterval = setInterval(() => {
             this.setState({["currentTime"]: this.formatTime(Math.ceil(this.getCurrentTime()))})
         }, 1000)

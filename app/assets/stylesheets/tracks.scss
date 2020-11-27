@@ -85,7 +85,12 @@
     margin-right: 8px;
 }
 .current-track-time {
+    margin-right: 0;
     color: #B77DC5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1em;
+    word-wrap: break-word;
 }
 #slider {
     -webkit-appearance: none;
