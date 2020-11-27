@@ -4,14 +4,12 @@ import {withRouter} from 'react-router-dom'
 import Search from './search'
 
 const mapStateToProps = state => {
-    debugger
     return {
         allSearches: state.search
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         requestAllSearches: () => dispatch(requestAllSearches())
     }

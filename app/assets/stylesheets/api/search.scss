@@ -17,15 +17,12 @@
 .search-results {
     text-decoration: none;
     position: absolute;
-    // position: relative;
-    // background-color: blue;
     z-index: 400;
     height: auto;
     margin: 0;
     display: flex;
     flex-direction: column;
     padding-inline-start: 0px;
-    // overflow: hidden;
     top: 37px;
     
 }
@@ -36,7 +33,6 @@
     background-color: #f3f3f3;
     border-radius: 3px;
     color: rgba(51,51,51,70);
-    // line-height: 16px;
     outline: none;
     margin: 0;
     display: inline-flex;
@@ -56,10 +52,8 @@
     background-color: white;
     display: inline-flex;
     margin: 0;
-    // position: absolute;
     width: 322px;
     height: 58px;
-    // width: 322px;
     padding: 1px;
     display: flex;
     .result-image {

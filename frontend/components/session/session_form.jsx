@@ -13,12 +13,10 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(user){
-        debugger
         return e => {
             e.preventDefault()
             this.props.submitAction(user)
                 .then((currentUserId) => {
-                    debugger
                     this.props.history.push(`/users/${this.props.formType === "Log in" ? currentUserId : currentUserId.userId}`)
                 })
         }

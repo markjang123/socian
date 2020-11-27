@@ -2,7 +2,6 @@ import {fetchAllSearches} from '../util/search_api_util'
 export const RECEIVE_ALL_SEARCHES = 'RECEIVE_ALL_SEARCHES'
  
 const receiveSearches = (searches) => {
-    debugger
     return {
         type: RECEIVE_ALL_SEARCHES,
         searches

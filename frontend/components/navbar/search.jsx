@@ -7,13 +7,11 @@ class Search extends React.Component {
         this.update = this.update.bind(this)
         this.filterSearches = this.filterSearches.bind(this)
         this.clearText = this.clearText.bind(this)
-        debugger
     }
     
     update(field){
         return e => {
             let newResults = this.filterSearches(e.currentTarget.value)
-            debugger
             this.setState({[field]: newResults})
         }
     }
@@ -21,7 +19,6 @@ class Search extends React.Component {
         this.props.requestAllSearches()
     }
     componentDidUpdate(prevProps){
-        debugger
         if (this.props.location.pathname !== prevProps.location.pathname){
             this.clearText()
         }

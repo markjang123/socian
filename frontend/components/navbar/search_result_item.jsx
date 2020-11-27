@@ -15,7 +15,6 @@ class SearchResultItem extends React.Component {
         // }
     }
     render(){
-debugger
         return (
             <Link className="search-link" to={this.props.result.username ? `/users/${this.props.result.id}` : `/users/${this.props.result.artist.id}/albums/${this.props.result.id}`}>
             <div className="search-result-item" onClick={this.handleClick}>

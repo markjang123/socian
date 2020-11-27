@@ -19,7 +19,6 @@ class TrackPlayer extends React.Component {
         this.seekToTime = this.seekToTime.bind(this)
     }
     componentDidUpdate(){
-        debugger
         if (!this.props.isPlaying){
             this.audio.current.pause()
         } else {
@@ -37,18 +36,13 @@ class TrackPlayer extends React.Component {
         }
     }
     getCurrentTime(){
-        debugger
         return this.audio.current === null ? "" : this.audio.current.currentTime
     }
     renderAudio(){
         return new Audio(this.props.currentTrack.audio_source || "")
     }
-    updateTime(){
-        debugger
-        setInterval(console.log(this.getCurrentTime()), 1000)
-    }
+    
     updateBar(e) {
-        console.log(`Bar at: ${this.state.percentDone}`)
         this.setState({
           ["percentDone"]: 100 * (this.audio.current.currentTime / this.audio.current.duration)
         });
@@ -57,7 +51,6 @@ class TrackPlayer extends React.Component {
         });
       }
     componentDidMount(){
-        debugger
         this.setState({["duration"]: this.audio.current.duration})
        this.timeInterval = setInterval(() => {
             this.setState({["currentTime"]: this.formatTime(Math.ceil(this.getCurrentTime()))})
@@ -81,7 +74,6 @@ class TrackPlayer extends React.Component {
         this.audio.current.currentTime = this.audio.current.duration * (e.target.value / 100)
     }
     render(){
-        debugger
        return <div className="track-player">
            <audio ref={this.audio} src={this.props.currentTrack.audio_source} />
            <div onClick={this.togglePlay} className="big-play-button">{this.renderIcon()}</div>
@@ -97,14 +89,12 @@ class TrackPlayer extends React.Component {
     }
 }
     const mapStateToProps = state => {
-        debugger
         return {
             currentTrack: state.currentTrack.track,
             isPlaying: state.currentTrack.isPlaying
         }
     }
     const mapDispatchToProps = dispatch => {
-        debugger
         return {
             setCurrentTrack: track => dispatch(setCurrentTrack(track)),
             setPlayStatus: isPlaying => dispatch(setPlayStatus(isPlaying))

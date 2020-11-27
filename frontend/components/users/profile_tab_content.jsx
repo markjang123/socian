@@ -10,7 +10,6 @@ class ProfileTabContent extends React.Component {
         // this.state = {body: this.props.body}
     }
     renderTabComponent(){
-        debugger
         switch(this.props.body){
             case "posts":
                 return <ProfilePostIndex />
@@ -19,14 +18,12 @@ class ProfileTabContent extends React.Component {
             case "albums":
                 return <ProfileAlbumIndex pageUser={this.props.pageUser} albums={this.props.albums}/>
             case "albumShow":
-                debugger
                 return <AlbumShowContainer />
             default: 
             return <ProfileAlbumIndex pageUser={this.props.pageUser}/>
         }
     }
     render(){
-        debugger
         return (<div className="profile-tab-content">
                    {this.renderTabComponent()}
                 </div>)

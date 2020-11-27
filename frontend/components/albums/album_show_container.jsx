@@ -3,7 +3,6 @@ import AlbumShow from './album_show'
 import {requestAlbum} from '../../actions/albums_actions'
 import {withRouter} from 'react-router-dom'
 const mapStateToProps = (state, ownProps) => {
-    debugger
     let albumId = ownProps.match.params.albumId
     return {
         album: state.entities.albums.user[albumId],
