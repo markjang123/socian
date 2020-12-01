@@ -7,7 +7,7 @@ class Splash extends React.Component {
    
     render() {
         return (
-            <div>
+            <div className="splash-wrapper">
                 <div className="splash-header">
                     <div className="header-content">
                         <BigContent imageUrl="https://kerokerobonito.com/kerokero4%20(1).jpg" />

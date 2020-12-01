@@ -1,14 +1,25 @@
 // Place all the styles related to the albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    max-width: 100%; 
+    overflow-x: hidden;
+    
+}
+.album-index-container {
+    overflow-x: hidden;
+    background-color: red;
+    width: 80%;
+}
 .album-index {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     height: 1000px;
-    width: 800px;
+    width: 1200px;
     margin: auto;
     overflow-y: auto;
+    
     .album-index-item {
         display: flex;
         flex-direction: column;

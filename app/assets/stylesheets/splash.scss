@@ -1,12 +1,17 @@
+.splash-wrapper {
+   width: 1920px;
+}
 .splash-header {
     height: 500px;
     width: 1920px;
     font-size: x-large;
     background-color: rgb(34,34,34);
+    background-color: rgb(34,34,34);
     margin-top: 20px;
     margin-bottom: 92px;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: hidden;
     .header-content {
         display: flex;
         // flex-direction: row-reverse;
@@ -130,7 +135,7 @@
     font-weight: lighter;
     font-size: 14px;
     color: #408ea3;
-    width: 750px;
+    width: 1140px;
     margin-left: auto;
     margin-right: auto;
 }
