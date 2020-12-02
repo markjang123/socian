@@ -4,7 +4,7 @@ import ProfileBio from './profile_bio'
 class ProfileColumn extends React.Component {
     render(){
         return (<div className="profile-column">
-                    <ProfileBio pageUser={this.props.pageUser}/>
+                    <ProfileBio requestUser={this.props.requestUser} pageUser={this.props.pageUser} currentUserId={this.props.currentUserId}/>
                 </div>)
     }
 }

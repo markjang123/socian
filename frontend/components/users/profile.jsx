@@ -21,7 +21,7 @@ class Profile extends React.Component {
         if (!!this.props.pageUser){
         return (<div className="profile-container">
                 <ProfileBody 
-                body={this.props.body || "albums"} pageUser={this.props.pageUser} albums={this.props.albums}/>
+                body={this.props.body || "albums"} pageUser={this.props.pageUser} currentUserId={this.props.currentUserId} requestUser={this.props.requestUser} albums={this.props.albums}/>
         </div>)
         } else {
             return null

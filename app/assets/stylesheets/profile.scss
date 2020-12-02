@@ -79,7 +79,9 @@
             }
         }
         .follow-button {
-            width: 100%;
+            width: 120px;
+            height: 27px;
+            display: inline-block;
             background-color: rgba(255,255,255,.5);
             border-radius: 3px;
             padding: 6px 5px 5px;
@@ -88,9 +90,25 @@
             outline: none;
             border: 1px solid rgba(0, 0, 0, 0.25);
             margin: 0;
-            color: blue;
+            color:#CE05FF;
             cursor: pointer;
         }
+        .unfollow-button {
+            width: 120px;
+            height: 27px;
+            display: inline-block;
+            color: white;
+            background-color: #629AAA;
+            border-radius: 3px;
+            padding: 6px 5px 5px;
+            font-size: 12px;
+            font-weight: bold;
+            outline: none;
+            border: none;
+            margin: 0;
+            cursor: pointer;
+        }
+        
     }
     .artist-description {
         font-size: 12px;

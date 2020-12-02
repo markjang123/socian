@@ -12,7 +12,7 @@ class ProfileBody extends React.Component {
         return (<div className="profile-body">
                     <ProfileBanner pageUser={this.props.pageUser} />
                     <ProfileTabIndex body={this.props.body} pageUser={this.props.pageUser}/>
-                    <ProfileColumn pageUser={this.props.pageUser} />
+                    <ProfileColumn pageUser={this.props.pageUser} requestUser={this.props.requestUser} currentUserId={this.props.currentUserId} />
                     <ProfileTabContent 
                     albums={this.props.albums}
                     album={this.props.album} 
