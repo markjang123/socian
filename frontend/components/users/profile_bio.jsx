@@ -14,7 +14,7 @@ class ProfileBio extends React.Component {
                     </div>
                     {this.props.pageUser.id !== this.props.currentUserId && <FollowButton requestUser={this.props.requestUser} pageUser={this.props.pageUser} currentUserId={this.props.currentUserId}/>}
                     <p className="artist-description">{this.props.pageUser.description || ""}</p>
-                    <ProfileLinks />
+                    <ProfileLinks pageUser={this.props.pageUser}/>
                 </div>)
     }
 }

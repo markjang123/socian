@@ -17,8 +17,9 @@ class ProfileBody extends React.Component {
                     albums={this.props.albums}
                     album={this.props.album} 
                     body={this.props.body || "albums"} 
-                    pageUser={this.props.pageUser}/>
-                   
+                    pageUser={this.props.pageUser}
+                    currentUserId={this.props.currentUserId}
+                    />
                 </div>)
     }
 }

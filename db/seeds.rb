@@ -10,17 +10,17 @@ demo_profile = open("https://www.kindpng.com/picc/m/24-248253_user-profile-defau
 demo.profile_image.attach(io: demo_profile, filename: "demo_profile")
 demo_banner = open("https://f4.bcbits.com/img/0018750819_100.png")
 demo.banner_image.attach(io: demo_banner, filename: "demo_banner")
-kkb = User.create(username: "Kero Kero Bonito", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "kero@bonito.com", user_type: "artist", location: "London, UK", description: "KKB = Sarah + Gus + Jamie")
+kkb = User.create(username: "Kero Kero Bonito", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "kero@bonito.com", user_type: "artist", location: "London, UK", description: "KKB = Sarah + Gus + Jamie", soundcloud_link: "http://www.soundcloud.com/kerokerobonito", facebook_link: "http://www.facebook.com/kerokerobonito", youtube_link: "http://www.youtube.com/user/KeroKeroBonito", tumblr_link: "http://www.kerokerobonito.tumblr.com/", twitter_link: "http://www.twitter.com/KeroKeroBonito")
 kkb_profile = open("https://socian-seed.s3-us-west-1.amazonaws.com/kero_kero_bonito_profile.jpg")
 kkb.profile_image.attach(io: kkb_profile, filename: "kero_kero_bonito_profile")
 kkb_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/kero_kero_bonito_banner.png")
 kkb.banner_image.attach(io: kkb_banner, filename: "kero_kero_bonito_banner")
-bh = User.create(username: "Beach House", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "beach@house.com", user_type: "artist", location: "Baltimore, Maryland", description: "beachhousebaltimore.com")
+bh = User.create(username: "Beach House", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "beach@house.com", user_type: "artist", location: "Baltimore, Maryland", description: "beachhousebaltimore.com", facebook_link: "https://www.facebook.com/beachhouse")
 bh_profile = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_profile.jpg")
 bh.profile_image.attach(io: bh_profile, filename: "beach_house_profile") 
 bh_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_banner.png")
 bh.banner_image.attach(io: bh_banner, filename: "beach_house_banner")
-ff = User.create(username: "Fleet Foxes", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "fleet@foxes.com", user_type: "artist", location: "Seattle, Washington", description: "")
+ff = User.create(username: "Fleet Foxes", password_digest: "$2a$12$JT98UKjUzhLIwE8Wbo3/EO.NRF43w9CT1b62c8ZSw7q6TR9uMIB8C", email: "fleet@foxes.com", user_type: "artist", location: "Seattle, Washington", description: "", facebook_link: "https://www.facebook.com/FleetFoxes/")
 ff_profile = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_profile.jpg")
 ff.profile_image.attach(io: ff_profile, filename: "fleet_foxes_profile") 
 ff_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_banner.png")
@@ -178,7 +178,91 @@ Track.create(album_id: civilisation_I.id, title: "Battle Lines", length: "4:18",
 Track.create(album_id: civilisation_I.id, title: "When The Fires Come", length: "3:40", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/civilisation_i/when_the_fires_come.mp3")
 Track.create(album_id: civilisation_I.id, title: "The River", length: "4:39", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/civilisation_i/the_river.mp3")
 
+flamingo_vinyl = Product.create(seller_id: kkb.id, name: "FLAMINGO (LIMITED EDITION 7” VINYL)", price: 15, category: "Record/Vinyl" )
+flamingo_vinyl_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/kkb_products/flamingo_vinyl.jpg")
+flamingo_vinyl.product_image.attach(io: flamingo_vinyl_image, filename: "flamingo_vinyl_image")
+pocket_crocodile_shirt = Product.create(seller_id: kkb.id, name: "POCKET CROCODILE", price: 25, category: "Apparel" )
+pocket_crocodile_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/kkb_products/kkb_crocodile_polo.jpg")
+pocket_crocodile_shirt.product_image.attach(io: pocket_crocodile_image, filename: "pocket_crocodile_image")
+symbols_beanie = Product.create(seller_id: kkb.id, name: "SYMBOLS BEANIE", price: 15, category: "Apparel" )
+symbols_beanie_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/kkb_products/kkb_beanie.jpg")
+symbols_beanie.product_image.attach(io: symbols_beanie_image, filename: "symbols_beanie_image")
+kkb_pink_shirt = Product.create(seller_id: kkb.id, name: "KKB LOGO (ENGLISH) (PINK)", price: 25, category: "Apparel" )
+kkb_pink_shirt_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/kkb_products/kkb_pink_shirt.jpg")
+kkb_pink_shirt.product_image.attach(io: kkb_pink_shirt_image, filename: "kkb_pink_shirt_image")
+kkb_blue_shirt = Product.create(seller_id: kkb.id, name: "KKB LOGO (JAPANESE) (BLUE)", price: 25, category: "Apparel" )
+kkb_blue_shirt_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/kkb_products/kkb_blue_shirt.jpg")
+kkb_blue_shirt.product_image.attach(io: kkb_blue_shirt_image, filename: "kkb_blue_shirt_image")
 
+bg_post = Post.create(author_id: kkb.id, post_type: "New release", album_id: bonito_generation.id, date: "September 5, 2020")
+tnp_post = Post.create(author_id: kkb.id, post_type: "New release", album_id: time_n_place.id, date: "August 12, 2020")
+totep_post = Post.create(author_id: kkb.id, post_type: "New release", album_id: totep.id, date: "July 2, 2020")
+civi_post = Post.create(author_id: kkb.id, post_type: "New release", album_id: civilisation_I.id, date: "May 8, 2020")
+
+bloom_shirt = Product.create(seller_id: bh.id, name: "Bloom Black T-Shirt", price: 24, category: "Apparel" )
+bloom_shirt_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_products/bloom_black_tee.jpg")
+bloom_shirt.product_image.attach(io: bloom_shirt_image, filename: "bloom_shirt_image")
+
+dc_shirt = Product.create(seller_id: bh.id, name: "Depression Cherry White T-Shirt", price: 24, category: "Apparel" )
+dc_shirt_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_products/dc_white_shirt.jpg")
+dc_shirt.product_image.attach(io: dc_shirt_image, filename: "dc_shirt_image")
+
+dc_vinyl = Product.create(seller_id: bh.id, name: "Depression Cherry - Black Vinyl LP", price: 18, category: "Record/Vinyl" )
+dc_vinyl_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_products/dc_vinyl.jpg")
+dc_vinyl.product_image.attach(io: dc_vinyl_image, filename: "dc_vinyl_image")
+
+dc_cassette = Product.create(seller_id: bh.id, name: "Depression Cherry - Cassette Tape - Red", price: 10, category: "Cassette" )
+dc_cassette_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_products/dc_cassette.jpg")
+dc_cassette.product_image.attach(io: dc_cassette_image, filename: "dc_cassette_image")
+
+dc_cd = Product.create(seller_id: bh.id, name: "Depression Cherry - Compact Disc", price: 12, category: "Compact Disc (CD)" )
+dc_cd_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_products/dc_cd.jpg")
+dc_cd.product_image.attach(io: dc_cd_image, filename: "dc_cd_image")
+
+bloom_cd = Product.create(seller_id: bh.id, name: "Bloom - Compact Disc", price: 12, category: "Compact Disc (CD)" )
+bloom_cd_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_products/bloom_cd.jpg")
+bloom_cd.product_image.attach(io: bloom_cd_image, filename: "bloom_cd_image")
+
+bloom_cassette = Product.create(seller_id: bh.id, name: "Bloom - Cassette Tape - Black", price: 10, category: "Cassette" )
+bloom_cassette_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/beach_house_products/bloom_cassette.jpg")
+bloom_cassette.product_image.attach(io: bloom_cassette_image, filename: "bloom_cassette_image")
+
+
+bloom_post = Post.create(author_id: bh.id, post_type: "New release", album_id: bloom.id, date: "September 8, 2018")
+dc_post = Post.create(author_id: bh.id, post_type: "New release", album_id: dc.id, date: "January 8, 2019")
+
+hb_cassette = Product.create(seller_id: ff.id, name: "Helplessness Blues - Cassette Tape - Red", price: 10, category: "Cassette" )
+hb_cassette_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_products/helplessness_cassette.jpg")
+hb_cassette.product_image.attach(io: hb_cassette_image, filename: "hb_cassette_image")
+
+hb_shirt = Product.create(seller_id: ff.id, name: "Helplessness Blues Forest Green T-Shirt", price: 24, category: "Apparel" )
+hb_shirt_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_products/ff_helplessness_shirt.jpg")
+hb_shirt.product_image.attach(io: hb_shirt_image, filename: "hb_shirt_image")
+
+ff_green_shirt = Product.create(seller_id: ff.id, name: "FF Green T-Shirt", price: 24, category: "Apparel" )
+ff_green_shirt_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_products/ff_green_shirt.jpg")
+ff_green_shirt.product_image.attach(io: ff_green_shirt_image, filename: "ff_green_shirt_image")
+
+ff_blue_shirt = Product.create(seller_id: ff.id, name: "FF Blue T-Shirt", price: 24, category: "Apparel" )
+ff_blue_shirt_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_products/ff_blue_shirt.jpg")
+ff_blue_shirt.product_image.attach(io: ff_blue_shirt_image, filename: "ff_blue_shirt_image")
+
+crack_up_cd = Product.create(seller_id: ff.id, name: "Crack-Up – Gatefold Cardboard Sleeve CD Release", price: 12, category: "Compact Disc (CD)" )
+crack_up_cd_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_products/crack_up_cd.jpg")
+crack_up_cd.product_image.attach(io: crack_up_cd_image, filename: "crack_up_cd_image")
+
+crack_up_vinyl = Product.create(seller_id: ff.id, name: "Crack-Up – 2-LP set", price: 20, category: "Record/Vinyl" )
+crack_up_vinyl_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_products/crack_up_vinyl.jpg")
+crack_up_vinyl.product_image.attach(io: crack_up_vinyl_image, filename: "crack_up_vinyl_image")
+
+ff_first_collection_vinyl = Product.create(seller_id: ff.id, name: "First Collection 2006-2009 – 4x Deluxe Vinyl LP", price: 65, category: "Record/Vinyl" )
+ff_first_collection_vinyl_image = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_products/ff_first_collection_vinyl.jpg")
+ff_first_collection_vinyl.product_image.attach(io: ff_first_collection_vinyl_image, filename: "ff_first_collection_vinyl_image")
+
+
+shore_post = Post.create(author_id: ff.id, post_type: "New release", album_id: shore.id, date: "September 25, 2020")
+hb_post = Post.create(author_id: ff.id, post_type: "New release", album_id: helplessness_blues.id, date: "October 10, 2019")
+crack_up_post = Post.create(author_id: ff.id, post_type: "New release", album_id: crack_up.id, date: "March 12, 2019")
 
 
 

@@ -1,0 +1,67 @@
+.locked-message{
+    width: 70%;
+font-family: Arial, Helvetica, sans-serif;
+color: #82838C;
+margin-left: auto;
+margin-right:auto;
+    .locked-message-header {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .locked-message-body {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+.profile-post-index {
+    display: flex;
+    flex-direction: column;
+    .profile-post {
+        display: inline-block;
+        height: 670px;
+        width: 660px;
+        border: solid 1px #D0D4D7;
+        margin-bottom: 25px;
+        padding: 16px 20px;
+    }
+}
+.post-image {
+    display: inline-block;
+    height: 400px;
+    width: 400px;
+    margin-top: 25px;
+}
+.post-date{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #818285;
+    margin-left: 10px;
+}
+.post-type{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    font-weight: bold;
+}
+.post-link-text {
+    margin: 0;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    display: inline-block;
+}
+.post-link-title {
+    font-weight: bold;
+}
+.post-link{
+   color: #333333;
+    text-decoration: none; 
+    margin-right: 50%;
+    display: inline-block;
+}
+.post-link:hover{
+    text-decoration: underline;
+}
+.post-link-text:hover{
+    text-decoration: underline;
+}

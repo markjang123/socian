@@ -12,9 +12,9 @@ class ProfileTabContent extends React.Component {
     renderTabComponent(){
         switch(this.props.body){
             case "posts":
-                return <ProfilePostIndex />
+                return <ProfilePostIndex pageUser={this.props.pageUser} currentUserId={this.props.currentUserId}/>
             case "products":
-                return <ProfileProductIndex />
+                return <ProfileProductIndex pageUser={this.props.pageUser}/>
             case "albums":
                 return <ProfileAlbumIndex pageUser={this.props.pageUser} albums={this.props.albums}/>
             case "albumShow":

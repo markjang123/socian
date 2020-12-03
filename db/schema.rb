@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_013716) do
+ActiveRecord::Schema.define(version: 2020_12_03_113115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,12 +55,23 @@ ActiveRecord::Schema.define(version: 2020_12_02_013716) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "author_id", null: false
-    t.text "body", null: false
-    t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "post_type"
+    t.integer "album_id"
+    t.string "date"
+    t.text "body"
     t.index ["author_id"], name: "index_posts_on_author_id"
-    t.index ["title"], name: "index_posts_on_title"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer "seller_id", null: false
+    t.string "name", null: false
+    t.string "category"
+    t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["seller_id"], name: "index_products_on_seller_id"
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -84,6 +95,11 @@ ActiveRecord::Schema.define(version: 2020_12_02_013716) do
     t.string "user_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "soundcloud_link"
+    t.string "facebook_link"
+    t.string "twitter_link"
+    t.string "youtube_link"
+    t.string "tumblr_link"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
