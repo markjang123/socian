@@ -12,12 +12,14 @@
 .session-form {
     position: relative;
     height: 500px;
-    margin: 30px auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 50px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 .form-header {
     position: relative;
@@ -46,6 +48,8 @@ text-decoration: none;
     height: 600px;
     width: 600px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
 }
 .form-link {
     text-decoration: none;
