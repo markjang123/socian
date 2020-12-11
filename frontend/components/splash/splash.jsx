@@ -10,7 +10,7 @@ class Splash extends React.Component {
             <div className="splash-wrapper">
                 <div className="splash-header">
                     <div className="header-content">
-                        <BigContent imageUrl="https://kerokerobonito.com/kerokero4%20(1).jpg" />
+                        <BigContent imageUrl={window.big_image} />
                         <SmallContent />
                     </div>
                 </div>
