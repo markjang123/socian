@@ -2,12 +2,29 @@
     font-size: 12px;
     color: red;
     list-style: none;
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    // border: 1px solid blue;
+    margin-top: 5px;
+    // margin-bottom: 25%;
+    padding: 0;
+    // left: 50%;
 }
+.errors-container {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    position: relative;
+    left: 35px;
+}
+
 .divider {
     height: 0px;
     width: 100%;
     border-top: 2px dotted #ccc;
-    margin: 36px 0 28px 0
+    margin: 10px 0 10px 0
 }
 .session-form {
     position: relative;
@@ -31,6 +48,7 @@
 .form-footer {
     color: #818285;
     font-size: 12px;
+    margin: 6px 0px;
 }
 #demo-user-link {
     font-size: 12px;
@@ -45,7 +63,7 @@ text-decoration: none;
     text-align: center;
     padding: 50px;
     display: inline-block;
-    height: 600px;
+    height: 400px;
     width: 600px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-left: auto;
@@ -58,8 +76,8 @@ text-decoration: none;
 .form-element {
     position: relative;
     width: 100%;
-    margin: 10px auto;
-    padding: 12px 0px 12px 0px;
+    margin: 5px auto;
+    padding: 5px 0px 5px 0px;
     text-align: center;
     input {
         display: inline-block;

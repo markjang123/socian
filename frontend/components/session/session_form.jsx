@@ -85,6 +85,9 @@ class SessionForm extends React.Component {
                 <form className="session-form" onSubmit={this.handleSubmit(this.state)}> 
                 <h3 className="form-header">{this.props.formType}</h3>
                 <div className="divider" ></div>
+                <div className="errors-container">
+                    <SessionErrors />
+                </div>
                     {this.renderFields()}
                     <div className="form-element">
                         <label className="form-label" htmlFor="password-field"> Password </label>
@@ -98,7 +101,6 @@ class SessionForm extends React.Component {
                         <a href="#" onClick={this.demoUser} id="demo-user-link">try as a demo user.</a>  
                     </div>
                 </form>
-                <SessionErrors className="errors-container"/>
             </div>
         )
     }
