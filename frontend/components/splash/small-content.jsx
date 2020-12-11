@@ -6,13 +6,13 @@ class SmallContent extends React.Component {
         return (
             <div className="small-content">
                 <Link to="/users/2/albums/6">
-                    <SmallContentItem subtitle="FEATURE" title="Teenage Engineering: Opbox Sensors and Shoes, OP-1 Drums and MIDI Sync" imageUrl="https://i.ytimg.com/vi/qfnBmQUge3U/maxresdefault.jpg"/>
+                    <SmallContentItem subtitle="FEATURE" title="Teenage Engineering: Opbox Sensors and Shoes, OP-1 Drums and MIDI Sync" imageUrl={window.small_image_2}/>
                 </Link>
                 <Link to="/users/3/albums/4">
-                    <SmallContentItem subtitle="FEATURE" title="Beach House’s Bloom was one of the best-reviewed albums of 2012, earning placement on over 40 “Best Albums of the Year” lists" imageUrl="https://upload.wikimedia.org/wikipedia/commons/7/72/Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg"/>
+                    <SmallContentItem subtitle="FEATURE" title="Beach House’s Bloom was one of the best-reviewed albums of 2012, earning placement on over 40 “Best Albums of the Year” lists" imageUrl={window.small_image_1}/>
                 </Link>
                 <Link to="users/4/albums/1">
-                    <SmallContentItem subtitle="FEATURE" title="Autumn Hymnal: The Story of Fleet Foxes’ ‘Shore,’ Their Stunning Surprise-Drop New Album" imageUrl="https://twt-thumbs.washtimes.com/media/image/2020/09/23/fleet_foxes_music_review_shore_98557_c0-626-3000-2374_s561x327.jpg?17354878af72b1a4b32a9822298e3fdea89d952e"/>
+                    <SmallContentItem subtitle="FEATURE" title="Autumn Hymnal: The Story of Fleet Foxes’ ‘Shore,’ Their Stunning Surprise-Drop New Album" imageUrl={window.small_image_3}/>
                 </Link>
             </div>
         )
