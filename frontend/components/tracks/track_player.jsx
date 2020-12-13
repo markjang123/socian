@@ -16,7 +16,6 @@ class TrackPlayer extends React.Component {
         this.getCurrentTime = this.getCurrentTime.bind(this)
         this.audio = React.createRef()
         this.updateBar = this.updateBar.bind(this)
-        this.seekToTime = this.seekToTime.bind(this)
     }
     componentDidUpdate(){
         if (!this.props.isPlaying){
@@ -36,7 +35,7 @@ class TrackPlayer extends React.Component {
         }
     }
     getCurrentTime(){
-        return this.audio.current === null ? "" : this.audio.current.currentTime
+        return this.audio.current === null ? 0 : this.audio.current.currentTime
     }
     renderAudio(){
         return new Audio(this.props.currentTrack.audio_source || "")
@@ -44,21 +43,27 @@ class TrackPlayer extends React.Component {
     
     updateBar(e) {
         this.setState({
-          ["percentDone"]: 100 * (this.audio.current.currentTime / this.audio.current.duration)
-        });
-        this.setState({
           ["percentDone"]: e.target.value
         });
+        this.audio.current.currentTime = Math.floor(this.audio.current.duration * (e.target.value / 100))
       }
     componentDidMount(){
         this.setState({["duration"]: this.audio.current.duration})
        this.timeInterval = setInterval(() => {
-            this.setState({["currentTime"]: this.formatTime(Math.ceil(this.getCurrentTime()))})
-        }, 1000)
-        this.sliderInterval =   setInterval(() =>
-        this.setState({
-            ["percentDone"]: 100 * (this.audio.current.currentTime / this.audio.current.duration)
-          }), 500)
+           if (!this.audio.current.currentTime){
+               this.setState({["currentTime"]: "0:00"})
+           } else {
+               this.setState({["currentTime"]: this.formatTime(Math.ceil(this.getCurrentTime()))})
+           }
+        }, 100)
+        this.sliderInterval = setInterval(() =>{
+            if (!this.audio.current.currentTime) {
+                this.setState({["percentDont"]: 0})
+            } else {
+                this.setState({
+                    ["percentDone"]: Math.floor(100 * (this.audio.current.currentTime / this.audio.current.duration))
+                })
+            }}, 100)
     }
     componentWillUnmount(){
         clearInterval(this.timeInterval)
@@ -70,9 +75,6 @@ class TrackPlayer extends React.Component {
         
         return `${Math.floor(seconds / 60)}:` + secDisplay
     }
-    seekToTime(e){
-        this.audio.current.currentTime = this.audio.current.duration * (e.target.value / 100)
-    }
     render(){
        return <div className="track-player">
            <audio ref={this.audio} src={this.props.currentTrack.audio_source} />
@@ -82,7 +84,7 @@ class TrackPlayer extends React.Component {
                         <p className="current-track-info">{this.props.currentTrack.title}</p>
                         <p className="current-track-info current-track-time"> {this.state.currentTime} / {this.props.currentTrack.length}</p>
                 </div>
-                <input onMouseUp={this.seekToTime} onChange={this.updateBar} id="slider" value={this.state.percentDone} type="range" min="0" max="100" />
+                <input onChange={this.updateBar} id="slider" value={this.state.percentDone} type="range" min="0" max="100" />
            </div>
        </div>
         

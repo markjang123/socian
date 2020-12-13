@@ -1,0 +1,30 @@
+.footer {
+    display: block;
+    background-color: #477987;
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0px;
+}
+.footer::-webkit-scrollbar {
+    display: none;
+  }
+.footer-link-wrapper {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 25px;
+}
+.footer-links {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer-links:hover {
+    text-decoration: underline;
+}

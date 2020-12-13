@@ -1,13 +1,14 @@
 .splash-wrapper {
-   width: 1920px;
+//    width: 1920px;
    margin-right: auto;
    margin-left: auto;
+   height: 1400px;
+//    margin-bottom: 60px;
 }
 .splash-header {
-    height: 500px;
-    width: 1920px;
+    height: 36%;
+    // width: 1920px;
     font-size: x-large;
-    background-color: rgb(34,34,34);
     background-color: rgb(34,34,34);
     margin-top: 20px;
     margin-bottom: 92px;
@@ -17,7 +18,7 @@
     .header-content {
         display: flex;
         // flex-direction: row-reverse;
-        width: 75%;
+        width: 1430px;
         height: 100%;
         margin: auto;
         background-color: white;
@@ -107,19 +108,29 @@
     color: white;
     position: absolute;
     z-index: 100;
-    height: 158px;
+    height: 155px;
     width: 826px;
+    // background-color: rgba(0, 0, 0, 0.4);
+    // box-shadow: 0 30px 40px rgba(0,0,0,.8);
     .big-content-title {
+        padding: 2px;
         font-size: 32px;
         font-weight: bold;
-        height: 37px;
+        height: 30px;
+        width: 265px;
+        border-radius: 10px;
         margin: 0px 0px 10px;
+        background-color: rgba(0, 0, 0, 0.4);
     }
     .big-content-subtitle {
+        border-radius: 3px;
         font-size: 16px;
-        height: 37px;
-        margin: 6px 0px 20px;
+        height: 53px;
+        width: 900px;
+        margin: 6px 0px 5px;
         font-weight: lighter;
+        background-color: rgba(0, 0, 0, 0.4);
+
     }
     .link-button {
         font-weight: bold;

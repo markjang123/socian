@@ -14,8 +14,10 @@ margin-right:auto;
     }
 }
 .profile-post-index {
+    // border: 3px solid red;
     display: flex;
     flex-direction: column;
+    clear:both
     .profile-post {
         display: inline-block;
         height: 670px;

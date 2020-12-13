@@ -8,17 +8,16 @@ body {
 }
 .album-index-container {
     overflow-x: hidden;
-    background-color: red;
     width: 80%;
 }
 .album-index {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    height: 1000px;
+    height: auto;
     width: 1200px;
     margin: auto;
-    overflow-y: auto;
+    // overflow-y: auto;
     
     .album-index-item {
         display: flex;

@@ -1,20 +1,21 @@
 .profile-container {
     background-color: black;
-    height: 100vh;
-    min-height: 100vh;
-    overflow: scroll;
+    height: 1440px;
+    overflow-y: auto;
+    // border: 2px solid blue;
 }
 .profile-body {
     background-color: white;
-    height: 100vh;
-    min-height: 100vh;
+    height: 1400px;
+    // min-height: 100vh;
     position: relative;
     width: 980px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     margin-bottom: 0;
-    overflow: scroll;
+    // border: 3px solid yellow;
+    overflow: auto;
 }
 .profile-banner {
     height: 180px;
@@ -134,8 +135,9 @@
     width: 795px;
     margin: 1px;
     position: absolute;
-    height: 100vh;
+    // height: 100vh;
     left: 30px;
+   
 }
 .profile-album-index {
     ::-webkit-scrollbar {
