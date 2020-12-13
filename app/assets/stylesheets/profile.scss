@@ -115,6 +115,7 @@
         font-size: 12px;
     }
     .profile-links {
+        line-height: 20px;
         padding: 0;
         margin: 0;
         text-align: left;
@@ -123,9 +124,11 @@
         .profile-link {
             margin: 10px 0 10px;
             text-align: left;
-            // color: blue;
+            color: #CE04FF;
             text-decoration: none;
-
+        }
+        .profile-link:hover {
+            text-decoration: underline;
         }
     }
 }
