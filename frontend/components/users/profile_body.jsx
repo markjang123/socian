@@ -9,7 +9,6 @@ class ProfileBody extends React.Component {
         // this.state = {body: this.props.body}
     }
     render(){
-        debugger
         let defaultTab = this.props.pageUser.user_type === "artist" ? "albums" : "following"
         return (<div className="profile-body">
                     <ProfileBanner pageUser={this.props.pageUser} />

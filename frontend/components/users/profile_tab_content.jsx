@@ -8,10 +8,8 @@ import FollowingIndex from '../users/following_index'
 class ProfileTabContent extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {body: this.props.body}
     }
     renderTabComponent(){
-        console.log(this.props)
         switch(this.props.body){
             case "posts":
                 return <ProfilePostIndex pageUser={this.props.pageUser} currentUserId={this.props.currentUserId}/>

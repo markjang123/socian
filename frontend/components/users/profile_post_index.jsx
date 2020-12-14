@@ -27,7 +27,6 @@ class ProfilePostIndex extends React.Component {
 
     }
     render(){
-        debugger
         return this.renderIfFollowing()
     }
 }
