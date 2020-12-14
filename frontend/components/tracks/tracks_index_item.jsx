@@ -15,9 +15,9 @@ class TracksIndexItem extends React.Component {
     }
     renderIcon(){
         if (this.props.isPlaying && this.props.currentTrack.id === this.props.track.id){
-            return <img className="play-button-icon" src="http://simpleicon.com/wp-content/uploads/pause.png" />
+            return <img className="play-button-icon" src={window.pause} />
         } else {
-            return <img className="play-button-icon" src="http://simpleicon.com/wp-content/uploads/play1.png" />
+            return <img className="play-button-icon" src={window.play} />
         }
     }
     render(){

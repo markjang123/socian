@@ -29,9 +29,9 @@ class TrackPlayer extends React.Component {
     }
     renderIcon(){
         if (this.props.isPlaying){
-            return <img className="big-play-button-icon" src="http://simpleicon.com/wp-content/uploads/pause.png" />
+            return <img className="big-play-button-icon" src={window.pause} />
         } else {
-            return <img className="big-play-button-icon" src="http://simpleicon.com/wp-content/uploads/play1.png" />
+            return <img className="big-play-button-icon" src={window.play} />
         }
     }
     getCurrentTime(){
