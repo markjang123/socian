@@ -11,7 +11,7 @@ class AlbumShow extends React.Component {
             dispatch(setCurrentTrack(this.props.album.tracks[0]))
             dispatch(setPlayStatus(false))
         }
-        this.props.requestAlbum(this.props.album.id)
+        this.props.requestAlbum(this.props.albumId)
     }
     componentDidUpdate(){
         if (this.props.album){

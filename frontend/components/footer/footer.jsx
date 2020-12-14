@@ -28,6 +28,7 @@ class Footer extends React.Component {
         this.setState({render: true})
     }
     componentDidUpdate(prevProps){
+        // let isRefresh = prevProps.location.pathname === this.props.location.pathname
         let isUsersPath = new RegExp('/users/', 'i')
         let bothUsersPaths = isUsersPath.test(this.props.location.pathname) && isUsersPath.test(prevProps.location.pathname)
         let currentPathWildcard = this.props.location.pathname.slice(7).split('/')[0]
