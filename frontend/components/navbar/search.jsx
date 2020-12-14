@@ -7,6 +7,7 @@ class Search extends React.Component {
         this.update = this.update.bind(this)
         this.filterSearches = this.filterSearches.bind(this)
         this.clearText = this.clearText.bind(this)
+        this.searchBar = React.createRef()
     }
     
     update(field){
@@ -20,7 +21,7 @@ class Search extends React.Component {
     }
     componentDidUpdate(prevProps){
         if (this.props.location.pathname !== prevProps.location.pathname){
-            this.clearText()
+            this.searchBar.current.value = ""
         }
     }
     filterSearches(query){
@@ -42,7 +43,7 @@ class Search extends React.Component {
     render(){
         return (
             <div className="search-container" onBlur={this.clearText}>
-                <input onChange={this.update("results")}  type="text" className="searchbar" placeholder="Search and discover music"/>
+                <input ref={this.searchBar} onChange={this.update("results")}  type="text" className="searchbar" placeholder="Search and discover music"/>
                 <ul className="search-results">
                     {this.state.results.map((result, idx) => <SearchResultItem key={idx} result={result} />)}
                 </ul>

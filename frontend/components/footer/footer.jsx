@@ -28,13 +28,17 @@ class Footer extends React.Component {
         this.setState({render: true})
     }
     componentDidUpdate(prevProps){
-        if (prevProps.location.pathname === "/" && this.props.location.pathname !== "/"){
+        let isUsersPath = new RegExp('/users/', 'i')
+        let bothUsersPaths = isUsersPath.test(this.props.location.pathname) && isUsersPath.test(prevProps.location.pathname)
+        let currentPathWildcard = this.props.location.pathname.slice(7).split('/')[0]
+        let prevPathWildcard = prevProps.location.pathname.slice(7).split('/')[0]
+        let navToDiffUser = bothUsersPaths && (currentPathWildcard !== prevPathWildcard)
+        if ((prevProps.location.pathname === "/" && this.props.location.pathname !== "/") || navToDiffUser){
             this.setState({render: false})
             setTimeout(() => this.setState({render: true}), 250)
         }
     }
     render(){ 
-        console.log(this.props.location)
         return this.RenderWhenCalled()
     }
 }
