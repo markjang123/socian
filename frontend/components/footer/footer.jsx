@@ -35,7 +35,7 @@ class Footer extends React.Component {
         let navToDiffUser = bothUsersPaths && (currentPathWildcard !== prevPathWildcard)
         if ((prevProps.location.pathname === "/" && this.props.location.pathname !== "/") || navToDiffUser){
             this.setState({render: false})
-            setTimeout(() => this.setState({render: true}), 250)
+            setTimeout(() => this.setState({render: true}), 500)
         }
     }
     render(){ 
