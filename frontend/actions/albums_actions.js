@@ -39,7 +39,6 @@ export const requestUserAlbums = (userId) => {
     }
 }
 export const requestAlbum = (albumId) => {
-    debugger
     return dispatch => {
         return AlbumsApiUtil.fetchAlbum(albumId)
             .then(response => {
