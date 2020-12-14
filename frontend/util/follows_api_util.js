@@ -6,7 +6,6 @@ export const follow = follow => {
     })
 }
 export const unfollow = followId => {
-    debugger
     return $.ajax({
         url: `/api/follows/${followId}`,
         method: "DELETE"

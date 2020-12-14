@@ -5,7 +5,6 @@ class Api::FollowsController < ApplicationController
         render :show
     end
     def destroy
-        # debugger
         @follow = Follow.find_by(id: params[:id])
         if @follow.destroy
             render json: {msg: "destroyed"}

@@ -9,7 +9,6 @@ class ProfilePostIndex extends React.Component {
         return !!user
     }
     renderIfFollowing(){
-        debugger
         return this.isFollowing() ? 
         <ul className="profile-post-index">
             {this.props.pageUser.posts.map(post => <ProfilePostIndexItem post={post} pageUser={this.props.pageUser}/>)}

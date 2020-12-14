@@ -8,7 +8,6 @@ class ProfilePostIndexItem extends React.Component {
         // this.state = {body: this.props.body}
     }
     render(){
-        debugger
         const {body, post_type, date, album_id} = this.props.post
         let album = this.props.albums[album_id]
         return (<div className="profile-post">

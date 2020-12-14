@@ -6,7 +6,7 @@
     top: 0;
     display: inline-block;
     // border: 1px solid blue;
-    margin-top: 5px;
+    margin-top: 0px;
     // margin-bottom: 25%;
     padding: 0;
     // left: 50%;
@@ -58,13 +58,14 @@ text-decoration: none;
 }
 .session-form-wrapper {
     // position: fixed;
-    top: 5%;
+    margin-top: 10%;
+    // top: 50%;
     left: 30%;
     right: 30%;
     text-align: center;
     padding: 50px;
     display: block;
-    height: 600px;
+    height: 950px;
     width: 600px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-left: auto;

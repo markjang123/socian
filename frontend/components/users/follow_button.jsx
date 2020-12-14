@@ -25,7 +25,6 @@ class FollowButton extends React.Component {
         if (this.isFollowing()){
             fetchAllFollows()
             .then(response => {
-                debugger
                 let followToBeDeleted = response.find(follow => follow.follower_id === this.props.currentUserId && follow.followee_id === this.props.pageUser.id)
                 if (followToBeDeleted){
                     unfollow(followToBeDeleted.id)
@@ -49,7 +48,6 @@ class FollowButton extends React.Component {
         return !!user
     }
     render(){
-        debugger
         return (
             <button onClick={this.handleClick} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} className={this.isFollowing() ? "unfollow-button" : "follow-button"}>{this.isFollowing() ? "Following" : "Follow"}</button>
         )

@@ -5,7 +5,6 @@ import FollowButton from './follow_button'
 class ProfileBio extends React.Component {
     
     render(){
-        debugger
         return (<div className="profile-bio">
                     <img src={this.props.pageUser.profile_image_url} className="profile-image" />
                     <div id="artist-name-location">
