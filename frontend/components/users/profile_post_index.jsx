@@ -5,8 +5,9 @@ class ProfilePostIndex extends React.Component {
         super(props)
     }
     isFollowing(){
+        let viewingSelf = this.props.currentUserId === this.props.pageUser.id
         let user = this.props.pageUser.followers.find(user => user.id === this.props.currentUserId)
-        return !!user
+        return !!user || viewingSelf
     }
     renderIfFollowing(){
         return this.isFollowing() ? 
@@ -26,6 +27,7 @@ class ProfilePostIndex extends React.Component {
 
     }
     render(){
+        debugger
         return this.renderIfFollowing()
     }
 }

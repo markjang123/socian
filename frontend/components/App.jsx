@@ -23,8 +23,8 @@ const App = () => {
                     <Route exact path="/users/:userId/posts" render={props => <ProfileContainer {...props} body={"posts"} />}/>
                     <Route exact path="/users/:userId/products" render={props => <ProfileContainer {...props} body={"products"} />}/>
                     <Route exact path="/users/:userId/albums" render={props => <ProfileContainer {...props} body={"albums"} />}/>
+                    <Route exact path="/users/:userId/following" render={props => <ProfileContainer {...props} body={"following"} />}/>
                     <Route exact path="/users/:userId/albums/:albumId" render={props =>  <ProfileContainer {...props} body="albumShow" />}   />
-                    {/* <Route path="/users/:userId/albums/:albumId" component={AlbumShow} /> */}
                     <Route exact path="/" component={Splash} />
                     <Route component={Error404} />
                 </Switch>

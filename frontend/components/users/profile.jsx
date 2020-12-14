@@ -6,6 +6,7 @@ class Profile extends React.Component {
         this.state = {pageUser: props.pageUser}
     }
     componentDidMount(){
+        debugger
         this.props.requestUser(this.props.userPageId)
         this.props.requestUserAlbums(this.props.userPageId)
     }
@@ -28,6 +29,7 @@ class Profile extends React.Component {
         }
     }
     render(){
+        debugger
         return this.renderIfStateIsDefined()
     }
 }

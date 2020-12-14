@@ -4,6 +4,7 @@ import {requestUser} from '../../actions/user_actions'
 import {requestUserAlbums} from '../../actions/albums_actions'
 
 const mapStateToProps = (state,ownProps) => {
+    debugger
     let userPageId = ownProps.match.params.userId
     return {
         currentUserId: state.session.currentUserId,

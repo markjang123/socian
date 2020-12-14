@@ -9,6 +9,8 @@ class ProfileBody extends React.Component {
         // this.state = {body: this.props.body}
     }
     render(){
+        debugger
+        let defaultTab = this.props.pageUser.user_type === "artist" ? "albums" : "following"
         return (<div className="profile-body">
                     <ProfileBanner pageUser={this.props.pageUser} />
                     <ProfileTabIndex body={this.props.body} pageUser={this.props.pageUser}/>
@@ -16,7 +18,7 @@ class ProfileBody extends React.Component {
                     <ProfileTabContent 
                     albums={this.props.albums}
                     album={this.props.album} 
-                    body={this.props.body || "albums"} 
+                    body={this.props.body || defaultTab} 
                     pageUser={this.props.pageUser}
                     currentUserId={this.props.currentUserId}
                     />
