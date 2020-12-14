@@ -12,7 +12,7 @@ class ProfilePostIndex extends React.Component {
     renderIfFollowing(){
         return this.isFollowing() ? 
         <ul className="profile-post-index">
-            {this.props.pageUser.posts.map(post => <ProfilePostIndexItem post={post} pageUser={this.props.pageUser}/>)}
+            {this.props.pageUser.posts.map(post => <ProfilePostIndexItem post={post} key={post.id} pageUser={this.props.pageUser}/>)}
         </ul> : 
         <div className="locked-message">
             <h3 className="locked-message-header">

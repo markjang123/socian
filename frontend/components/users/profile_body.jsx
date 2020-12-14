@@ -17,7 +17,9 @@ class ProfileBody extends React.Component {
                     <ProfileTabContent 
                     albums={this.props.albums}
                     album={this.props.album} 
-                    body={this.props.body || defaultTab} 
+                    body={this.props.body
+                         || defaultTab
+                        } 
                     pageUser={this.props.pageUser}
                     currentUserId={this.props.currentUserId}
                     />

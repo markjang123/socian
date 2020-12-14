@@ -25,7 +25,7 @@ class ProfileTabContent extends React.Component {
             if (this.props.pageUser.user_type === "artist"){
                 return <ProfileAlbumIndex pageUser={this.props.pageUser}/>
             } else {
-                return <p>this is who youre following DEFAULT</p>
+                return <FollowingIndex pageUser={this.props.pageUser}/>
             }
         }
     }

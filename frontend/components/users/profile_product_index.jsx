@@ -4,7 +4,7 @@ class ProfileProductIndex extends React.Component {
     render(){
         return(
                 <ul className="product-index">
-                    {this.props.pageUser.products.map(product => <ProductIndexItem product={product}/>)}
+                    {this.props.pageUser.products.map(product => <ProductIndexItem key={product.id} product={product}/>)}
                 </ul>
         ) 
     }

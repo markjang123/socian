@@ -6,7 +6,7 @@ class TracksIndex extends React.Component {
     }
     render(){
       return (<ol className="track-list">
-                    {this.props.tracks.map(track => <TracksIndexItemContainer track={track}/>)}
+                    {this.props.tracks.map(track => <TracksIndexItemContainer key={track.id} track={track}/>)}
             </ol>
       )
         
