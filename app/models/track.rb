@@ -5,4 +5,9 @@ class Track < ApplicationRecord
         primary_key: :id,
         foreign_key: :album_id,
         class_name: :Album
+    has_many :likes, 
+        as: :likeable
+    has_many :likers,
+        through: :likes,
+        source: :liker
 end

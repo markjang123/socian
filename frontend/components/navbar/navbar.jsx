@@ -28,10 +28,12 @@ const Navbar = (props) => {
         return (
             <div className={!isSessionForm() ? "navbar-wrapper" : "navbar-wrapper grayed"}>
                 <nav className={!isSessionForm() ? "navbar" : "navbar grayed"}>
-                    <Link className="navbar-home-link" to="/">
-                        <img id="logo-link" src={window.image} />
-                    </Link>
-                    {isSessionForm() ? null : <SearchContainer />}
+                    <div className="logo-search-wrapper">
+                        <Link className="navbar-home-link" to="/">
+                            <img id="logo-link" src={window.image} />
+                        </Link>
+                        {isSessionForm() ? null : <SearchContainer />}
+                    </div>
                     {isSessionForm() ? null : renderLinks()}
                 </nav>
             </div>

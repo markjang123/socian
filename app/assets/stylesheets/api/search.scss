@@ -2,15 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .search-container {
-    // background-color: red;
     text-decoration: none;
     position: relative;
-    top: 15%;
     height: auto;
     width: 322px;
-    right: 215px;
+    // right: 215px;
     z-index: 500;
     display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
     flex-direction: column;
     flex-shrink: 0;
 }

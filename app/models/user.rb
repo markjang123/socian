@@ -11,6 +11,18 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6, message: "Password must be at least 6 characters"}, allow_nil: true
     after_initialize :ensure_session_token
     attr_reader :password
+    has_many :likes_given,
+        primary_key: :id,
+        foreign_key: :liker_id,
+        class_name: :Like
+    has_many :albums_liked,
+        through: :likes_given,
+        source: :likeable, 
+        source_type: "Album"
+    has_many :tracks_liked,
+        through: :likes_given,
+        source: :likeable, 
+        source_type: "Track"
     has_many :products,
         primary_key: :id,
         foreign_key: :seller_id,

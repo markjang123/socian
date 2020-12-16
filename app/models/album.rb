@@ -8,6 +8,11 @@ class Album < ApplicationRecord
         primary_key: :id,
         foreign_key: :album_id,
         class_name: :Track
+    has_many :likes, 
+        as: :likeable
+    has_many :likers,
+        through: :likes,
+        source: :liker
     has_one_attached :cover
 
 end
