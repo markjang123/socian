@@ -11,6 +11,10 @@ class AlbumLikeButton extends React.Component {
     }
     likeAlbum(){
         const {currentUserId, albumId, requestUser} = this.props
+        if (!currentUserId){
+            this.props.history.push("/session/new")
+            return
+        }
         const newLike = {
             like: {
                 liker_id: currentUserId,
@@ -41,8 +45,8 @@ const mapStateToProps = (state, ownProps) => {
     let currentUser = state.entities.users[state.session.currentUserId]
     return {
         albumId, 
-        liked: currentUser.albums_liked.some(album => album.id === albumId),
-        likes_given: currentUser.likes_given,
+        liked: currentUser ? currentUser.albums_liked.some(album => album.id === albumId) : false,
+        likes_given: currentUser ? currentUser.likes_given : [],
         currentUserId: state.session.currentUserId
     }
 }

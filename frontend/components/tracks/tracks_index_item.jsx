@@ -18,6 +18,10 @@ class TracksIndexItem extends React.Component {
     }
     likeTrack(){
         const {currentUserId, track, requestUser} = this.props
+        if (!currentUserId){
+            this.props.history.push("/session/new")
+            return
+        }
         const newLike = {
             like: {
                 liker_id: currentUserId,
