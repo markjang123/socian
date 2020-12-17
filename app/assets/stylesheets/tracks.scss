@@ -32,9 +32,16 @@
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    // padding-top: auto;
-    // padding-bottom: auto;
-    // justify-content: space-between;
+    // cursor: pointer;
+    .track-heart-icon {
+        height: 18px;
+        width: 18px;
+        display: inline-block;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        cursor: pointer;
+    }
     .play-button {
         height: 19px;
         width: 19px;

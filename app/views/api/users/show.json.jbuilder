@@ -1,6 +1,4 @@
-
-
-    json.extract! @user, :id, :username, :user_type, :description, :location, :albums, :followers, :posts, :facebook_link, :soundcloud_link, :tumblr_link, :youtube_link, :twitter_link
+    json.extract! @user, :id, :username, :user_type, :description, :location, :albums, :followers, :likes_given, :albums_liked, :tracks_liked, :posts, :facebook_link, :soundcloud_link, :tumblr_link, :youtube_link, :twitter_link
     json.products do 
         json.array! @user.products do |product|
             json.extract! product, :id, :seller_id, :name, :price, :category

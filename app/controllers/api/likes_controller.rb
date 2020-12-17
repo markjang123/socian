@@ -15,6 +15,9 @@ class Api::LikesController < ApplicationController
             render json: {msg: "failed to destroy"}
         end
     end
+    def show
+        
+    end
     private
     def like_params
         params.require(:like).permit(:liker_id, :likeable_id, :likeable_type)

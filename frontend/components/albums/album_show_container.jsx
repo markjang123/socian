@@ -3,16 +3,17 @@ import AlbumShow from './album_show'
 import {requestAlbum} from '../../actions/albums_actions'
 import {withRouter} from 'react-router-dom'
 const mapStateToProps = (state, ownProps) => {
-    let albumId = ownProps.match.params.albumId
+    let albumId = parseInt(ownProps.match.params.albumId)
     return {
         album: state.entities.albums.user[albumId],
-        albumId
+        albumId, 
+        currentUserId: state.session.currentUserId
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        requestAlbum: albumId => dispatch(requestAlbum(albumId))
+        requestAlbum: albumId => dispatch(requestAlbum(albumId)),
     }
 }
 

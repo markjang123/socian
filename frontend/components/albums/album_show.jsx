@@ -1,6 +1,7 @@
 import React from 'react'
 import TrackPlayer from '../tracks/track_player'
 import TracksIndex from '../tracks/tracks_index'
+import AlbumLikeButton from './album_like_button'
 import {setCurrentTrack, setPlayStatus} from '../../actions/current_track_actions'
 class AlbumShow extends React.Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class AlbumShow extends React.Component {
             </div>
             <div className="middle-column">
                 <img className="album-cover" src={photoUrl} />
+                <AlbumLikeButton />
             </div>
             
         </div>

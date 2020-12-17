@@ -6,6 +6,28 @@ body {
     overflow-x: hidden;
     
 }
+.heart-icon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+.album-like-button-wrapper {
+    cursor: pointer;
+    display: flex;
+    margin-top: 10px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    .album-like-button-message {
+        margin-left: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        display: inline-block;
+    }
+    .album-like-button-message:hover {
+        text-decoration: underline;
+    }
+}
 .album-index-container {
     overflow-x: hidden;
     width: 80%;
