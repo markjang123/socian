@@ -27,7 +27,7 @@ ff_banner = open("https://socian-seed.s3-us-west-1.amazonaws.com/fleet_foxes_ban
 ff.banner_image.attach(io: ff_banner, filename: "fleet_foxes_banner")
 
 
-shore = Album.create(artist_id: ff.id, title: "Shore", release_date: Date.new(2020, 9, 25))
+shore = Album.create(artist_id: ff.id, title: "Shore", release_date: Date.new(2020, 9, 25), genre: "folk")
 shore_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/shore.jpg")
 shore.cover.attach(io: shore_cover, filename: "shore")
 Track.create(album_id: shore.id, title: "Wading In Waist-High Water", length: "2:15", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/shore/wading_in_waist_high_water.mp3")
@@ -46,7 +46,7 @@ Track.create(album_id: shore.id, title: "Thymia", length: "2:22", audio_source: 
 Track.create(album_id: shore.id, title: "Cradling Mother, Cradling Woman", length: "5:10", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/shore/cradling_mother_cradling_woman.mp3")
 Track.create(album_id: shore.id, title: "Shore", length: "4:19", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/shore/shore.mp3")
 
-crack_up = Album.create(artist_id: ff.id, title: "Crack-Up", release_date: Date.new(2017, 6, 16))
+crack_up = Album.create(artist_id: ff.id, title: "Crack-Up", release_date: Date.new(2017, 6, 16), genre: "baroque rock")
 crack_up_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/crack_up.jpg")
 crack_up.cover.attach(io: crack_up_cover, filename: "crack_up")
 Track.create(album_id: crack_up.id, title: "I Am All That I Need / Arroyo Seco / Thumprint Scar", length: "6:25", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/crack_up/i_am_all_that_i_needed_arroyo_seco_thumbprint_scar.mp3")
@@ -62,7 +62,7 @@ Track.create(album_id: crack_up.id, title: "I Should See Memphis", length: "4:44
 Track.create(album_id: crack_up.id, title: "Crack-Up", length: "6:24", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/crack_up/crack_up.mp3")
 
 
-helplessness_blues = Album.create(artist_id: ff.id, title: "Helplessness Blues", release_date: Date.new(2011, 4, 29))
+helplessness_blues = Album.create(artist_id: ff.id, title: "Helplessness Blues", release_date: Date.new(2011, 4, 29), genre: "indie folk")
 helplessness_blues_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/helplessness_blues.jpg")
 helplessness_blues.cover.attach(io: helplessness_blues_cover, filename: "helplessness_blues")
 Track.create(album_id: helplessness_blues.id, title: "Montezuma", length: "3:37", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/helplessness_blues/montezuma.mp3")
@@ -78,7 +78,7 @@ Track.create(album_id: helplessness_blues.id, title: "The Shrine / An Argument",
 Track.create(album_id: helplessness_blues.id, title: "Blue Spotted Tail", length: "3:05", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/helplessness_blues/blue_spotted_tail.mp3")
 Track.create(album_id: helplessness_blues.id, title: "Grown Ocean", length: "4:36", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/helplessness_blues/grown_ocean.mp3")
 
-bloom = Album.create(artist_id: bh.id, title: "Bloom", release_date: Date.new(2012, 5, 15))
+bloom = Album.create(artist_id: bh.id, title: "Bloom", release_date: Date.new(2012, 5, 15), genre: "dream pop")
 bloom_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/bloom.jpg")
 bloom.cover.attach(io: bloom_cover, filename: "bloom.jpg")
 Track.create(album_id: bloom.id, title: "Myth", length: "4:19", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/bloom/myth.mp3")
@@ -92,7 +92,7 @@ Track.create(album_id: bloom.id, title: "Wishes", length: "4:47", audio_source: 
 Track.create(album_id: bloom.id, title: "On The Sea", length: "5:32", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/bloom/on_the_sea.mp3")
 Track.create(album_id: bloom.id, title: "Irene", length: "16:57", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/bloom/irene.mp3")
 
-dc = Album.create(artist_id: bh.id, title: "Depression Cherry", release_date: Date.new(2015, 8, 28))
+dc = Album.create(artist_id: bh.id, title: "Depression Cherry", release_date: Date.new(2015, 8, 28), genre: "dream pop")
 dc_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/depression_cherry.jpg")
 dc.cover.attach(io: dc_cover, filename: "depression_cherry.jpg")
 Track.create(album_id: dc.id, title: "Levitation", length: "5:55", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/depression_cherry/levitation.mp3")
@@ -105,7 +105,7 @@ Track.create(album_id: dc.id, title: "Wildflower", length: "3:39", audio_source:
 Track.create(album_id: dc.id, title: "Bluebird", length: "3:55", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/depression_cherry/bluebird.mp3")
 Track.create(album_id: dc.id, title: "Days of Candy", length: "6:16", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/depression_cherry/days_of_candy.mp3")
 
-bonito_generation = Album.create(artist_id: kkb.id, title: "Bonito Generation", release_date: Date.new(2016, 10, 21))
+bonito_generation = Album.create(artist_id: kkb.id, title: "Bonito Generation", release_date: Date.new(2016, 10, 21), genre: "avant pop")
 bonito_generation_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/bonito_generation.jpg")
 bonito_generation.cover.attach(io: bonito_generation_cover, filename: "bonito_generation.jpg")
 Track.create(album_id: bonito_generation.id, title: "Waking Up", length: "2:57", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/bonito_generation/waking_up.mp3")
@@ -121,12 +121,12 @@ Track.create(album_id: bonito_generation.id, title: "Trampoline", length: "4:04"
 Track.create(album_id: bonito_generation.id, title: "Picture This", length: "3:24", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/bonito_generation/picture_this.mp3")
 Track.create(album_id: bonito_generation.id, title: "Hey Parents", length: "3:23", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/bonito_generation/hey_parents.mp3")
 
-flamingo = Album.create(artist_id: kkb.id, title: "Flamingo", release_date: Date.new(2014, 9, 23))
+flamingo = Album.create(artist_id: kkb.id, title: "Flamingo", release_date: Date.new(2014, 9, 23), genre: "avant pop")
 flamingo_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/flamingo.jpg")
 flamingo.cover.attach(io: flamingo_cover, filename: "flamingo.jpg")
 Track.create(album_id: flamingo.id, title: "Flamingo", length: "3:17", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/flamingo/flamingo.mp3")
 
-time_n_place = Album.create(artist_id: kkb.id, title: "Time \'n\' Place", release_date: Date.new(2018, 10, 1))
+time_n_place = Album.create(artist_id: kkb.id, title: "Time \'n\' Place", release_date: Date.new(2018, 10, 1), genre: "noise rock")
 time_n_place_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/time_'n'_place.jpg")
 time_n_place.cover.attach(io: time_n_place_cover, filename: "time_n_place.jpg")
 Track.create(album_id: time_n_place.id, title: "Outside", length: "1:51", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/time_n_place/outside.mp3")
@@ -142,7 +142,7 @@ Track.create(album_id: time_n_place.id, title: "Sometimes", length: "2:01", audi
 Track.create(album_id: time_n_place.id, title: "Swimming", length: "3:19", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/time_n_place/swimming.mp3")
 Track.create(album_id: time_n_place.id, title: "Rest Stop", length: "3:22", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/time_n_place/rest_stop.mp3")
 
-totep = Album.create(artist_id: kkb.id, title: "TOTEP", release_date: Date.new(2018, 2, 20))
+totep = Album.create(artist_id: kkb.id, title: "TOTEP", release_date: Date.new(2018, 2, 20), genre: "noise rock")
 totep_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/TOTEP.jpg")
 totep.cover.attach(io: totep_cover, filename: "totep.jpg")
 Track.create(album_id: totep.id, title: "The One True Path", length: "2:55", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/totep/the_one_true_path.mp3")
@@ -151,7 +151,7 @@ Track.create(album_id: totep.id, title: "You Know How It Is", length: "2:14", au
 Track.create(album_id: totep.id, title: "Cinema", length: "2:55", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/totep/cinema.mp3")
 
 
-intro_bonito = Album.create(artist_id: kkb.id, title: "Intro Bonito", release_date: Date.new(2013, 9, 30))
+intro_bonito = Album.create(artist_id: kkb.id, title: "Intro Bonito", release_date: Date.new(2013, 9, 30), genre: "avant pop")
 intro_bonito_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/intro_bonito.jpg")
 intro_bonito.cover.attach(io: intro_bonito_cover, filename: "intro_bonito.jpg")
 Track.create(album_id: intro_bonito.id, title: "Bonito Intro", length: "0:50", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/intro_bonito/bonito_intro.mp3")
@@ -171,7 +171,7 @@ Track.create(album_id: intro_bonito.id, title: "Small Town", length: "2:46", aud
 Track.create(album_id: intro_bonito.id, title: "I'd Rather Sleep", length: "1:55", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/intro_bonito/id_rather_sleep.mp3")
 
 
-civilisation_I = Album.create(artist_id: kkb.id, title: "Civilisation I", release_date: Date.new(2019, 9, 30))
+civilisation_I = Album.create(artist_id: kkb.id, title: "Civilisation I", release_date: Date.new(2019, 9, 30), genre: "art pop")
 civilisation_I_cover = open("https://socian-seed.s3-us-west-1.amazonaws.com/Civilisation_I.jpg")
 civilisation_I.cover.attach(io: civilisation_I_cover, filename: "civilisation_I.jpg")
 Track.create(album_id: civilisation_I.id, title: "Battle Lines", length: "4:18", audio_source: "https://socian-seed.s3-us-west-1.amazonaws.com/civilisation_i/battle_lines.mp3")
