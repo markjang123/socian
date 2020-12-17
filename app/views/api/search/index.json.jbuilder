@@ -1,5 +1,5 @@
 albums = json.array! @albums do |album| 
-    json.extract! album, :id, :title
+    json.extract! album, :id, :title, :genre
     json.artist album.artist
     json.photoUrl url_for(album.cover)
 end

@@ -49,7 +49,7 @@ class TracksIndexItem extends React.Component {
                 <p className="track-title" >{this.props.track.title}</p>
             </li>
                 <p className="track-length">{this.props.track.length}</p>
-                <img onClick={this.props.liked ? this.unlikeTrack : this.likeTrack} className="track-heart-icon" src={this.props.liked ? "https://www.flaticon.com/svg/static/icons/svg/833/833558.svg" : "https://www.flaticon.com/svg/static/icons/svg/872/872229.svg"} />
+                <img onClick={this.props.liked ? this.unlikeTrack : this.likeTrack} className="track-heart-icon" src={this.props.liked ? window.heart_filled : window.heart_empty} />
         </div>
       )
         

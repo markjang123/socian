@@ -4,7 +4,6 @@ import { requestUser } from '../../actions/user_actions'
 import TracksIndexItem from './tracks_index_item'
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     let currentUser = state.entities.users[state.session.currentUserId]
     return {
         isPlaying: state.currentTrack.isPlaying,

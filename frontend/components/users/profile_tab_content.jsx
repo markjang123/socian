@@ -5,6 +5,7 @@ import ProfilePostIndex from './profile_post_index'
 import ProfileProductIndex from './profile_product_index'
 import AlbumShowContainer from '../albums/album_show_container'
 import FollowingIndex from '../users/following_index'
+import WishlistIndex from '../users/wishlist_index'
 class ProfileTabContent extends React.Component {
     constructor(props) {
         super(props)
@@ -21,6 +22,8 @@ class ProfileTabContent extends React.Component {
                 return <AlbumShowContainer />
             case "following": 
                 return <FollowingIndex pageUser={this.props.pageUser}/>
+            case "wishlist":
+                return <WishlistIndex pageUser={this.props.pageUser}/>
             default: 
             if (this.props.pageUser.user_type === "artist"){
                 return <ProfileAlbumIndex pageUser={this.props.pageUser}/>

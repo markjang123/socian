@@ -12,9 +12,17 @@ class AlbumIndex extends React.Component {
     }
    
     render() {
+        let displayedAlbums
+        if (this.props.filter){
+            displayedAlbums = this.props.albums.filter(album => album.genre === this.props.filter)
+        } else {
+            displayedAlbums = this.props.albums
+        }
         return (
         <ul className="album-index">
-            {this.props.albums ? this.props.albums.map((album, idx) => <AlbumIndexItem album={album} key={idx} />) : null}
+            {displayedAlbums ? displayedAlbums.map((album, idx) => {
+            return <AlbumIndexItem album={album} key={idx} />
+            }) : null}
         </ul>
         )
     }

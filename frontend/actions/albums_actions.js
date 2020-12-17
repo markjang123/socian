@@ -1,6 +1,7 @@
 import * as AlbumsApiUtil from '../util/albums_api_utils'
 export const RECEIVE_ALL_ALBUMS = 'RECEIVE_ALL_ALBUMS'
 export const RECEIVE_USER_ALBUMS = 'RECEIVE_USER_ALBUMS'
+export const RECEIVE_FILTER = 'RECEIVE_FILTER'
 export const RECEIVE_ALBUM = 'RECEIVE_ALBUM'
  
 const receiveAlbums = (albums) => {
@@ -21,6 +22,12 @@ const receiveUserAlbums = (albums) => {
         albums: albums
     }
 }
+const receiveFilter = filter => {
+    return {
+        type: RECEIVE_FILTER,
+        filter
+    }
+}
 
 export const requestAlbums = () => {
     return dispatch => {
@@ -28,6 +35,11 @@ export const requestAlbums = () => {
             .then(response => {
                 dispatch(receiveAlbums(response))
             })
+    }
+}
+export const filterAlbums = (genre) => {
+    return dispatch => {
+        dispatch(receiveFilter(genre))
     }
 }
 export const requestUserAlbums = (userId) => {

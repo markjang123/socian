@@ -10,6 +10,7 @@ class ProfileTabIndex extends React.Component {
                 </div>) : 
         (<div className="profile-tab-index">
             <NavLink activeClassName="active" className="profile-tab" to={`/users/${this.props.pageUser.id}/following`}>following</NavLink>
+            <NavLink activeClassName="active" className="profile-tab" to={`/users/${this.props.pageUser.id}/wishlist`}>Wishlist</NavLink>
         </div>)
 
     }

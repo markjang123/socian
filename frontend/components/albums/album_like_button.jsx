@@ -30,7 +30,7 @@ class AlbumLikeButton extends React.Component {
     render() {
         return (
             <div onClick={this.props.liked ? this.unlikeAlbum : this.likeAlbum} className="album-like-button-wrapper">
-                <img className="heart-icon" src={this.props.liked ? "https://www.flaticon.com/svg/static/icons/svg/833/833558.svg" : "https://www.flaticon.com/svg/static/icons/svg/872/872229.svg"} />
+                <img className="heart-icon" src={this.props.liked ? window.heart_filled : window.heart_empty} />
                 <p className="album-like-button-message">{this.props.liked ? "Remove from Wishlist" : "Add to Wishlist"}</p>
             </div>
         )

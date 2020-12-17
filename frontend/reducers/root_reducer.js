@@ -4,13 +4,15 @@ import ErrorsReducer from '../reducers/errors/errors_reducer'
 import EntitiesReducer from '../reducers/entities/entities_reducer'
 import SearchReducer from '../reducers/search/search_reducer'
 import CurrentTrackReducer from './current_track/current_track_reducer'
+import FilterReducer from './filter/filter_reducer'
 
 const RootReducer = combineReducers({
     entities: EntitiesReducer,
     session: SessionReducer,
     errors: ErrorsReducer,
     search: SearchReducer,
-    currentTrack: CurrentTrackReducer
+    currentTrack: CurrentTrackReducer,
+    filter: FilterReducer
 })
 
 export default RootReducer
