@@ -19,8 +19,9 @@ Socian is a clone of bandcamp, a site where fans can explore their favorite musi
     * demo login
   * Artist Profile Page
     * tabs for different components
-    
- ## Coming soon
   * Search functionality
   * Music player
+   * Favorite your favorite albums/tracks 
   * User Follows
+   * Hidden posts until the artist is followed
+  * Genre Filter
